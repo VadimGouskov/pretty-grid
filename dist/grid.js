@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Grid = exports.GridPoint = void 0;
 class GridPoint {
     constructor(x, y) {
         this.x = x;
@@ -10,15 +11,13 @@ exports.GridPoint = GridPoint;
 class Grid {
     constructor(cols, rows, width, height) {
         this.points = [[]];
-        this.width = width;
-        this.height = height;
         const stepCols = width / (cols - 1);
         const stepRows = height / (rows - 1);
         // initialize grid
-        for (let i = 0; i < rows; i++) {
+        for (let i = 0; i < cols; i++) {
             this.points[i] = [];
-            for (let j = 0; j < cols; j++) {
-                this.points[i][j] = new GridPoint(j * stepCols, i * stepRows);
+            for (let j = 0; j < rows; j++) {
+                this.points[i][j] = new GridPoint(i * stepCols, j * stepRows);
             }
         }
     }
@@ -31,11 +30,11 @@ class Grid {
     set(points) {
         this.points = points;
     }
-    getPoint(xIndex, yindex) {
-        return this.points[yindex][xIndex];
+    getPoint(col, row) {
+        return this.points[col][row];
     }
-    slice(startYIndex, stopYIndex, startXIndex, stopXIndex) {
-        const slice = this.points.slice(startYIndex, stopYIndex + 1).map((i) => i.slice(startXIndex, stopXIndex + 1));
+    getSection(startCol, endCol, startRow, endRow) {
+        const slice = this.points.slice(startCol, endCol + 1).map((i) => i.slice(startRow, endRow + 1));
         const gridFromSlice = new Grid(slice[0].length, slice.length, 0, 0);
         gridFromSlice.set(slice);
         return gridFromSlice;

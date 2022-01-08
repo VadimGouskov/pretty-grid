@@ -17,9 +17,15 @@ const s = (p: p5) => {
         p.fill('hotpink');
         p.ellipseMode(p.CENTER);
 
+        // Drawing the main grid
         grid.draw((point) => {
             p.circle(point.x, point.y, 10);
         });
+
+        // Copying a section as a new Grid
+        const section = grid.getSection(2, 3, 4, 7);
+        p.fill('cyan');
+        section.draw((point) => p.circle(point.x, point.y, 10));
     };
 };
 

@@ -8,23 +8,17 @@ export class GridPoint {
 }
 
 export class Grid {
-    width: number;
-    height: number;
-
     private points: GridPoint[][] = [[]];
 
     constructor(cols: number, rows: number, width: number, height: number) {
-        this.width = width;
-        this.height = height;
-
         const stepCols = width / (cols - 1);
         const stepRows = height / (rows - 1);
 
         // initialize grid
-        for (let i = 0; i < rows; i++) {
+        for (let i = 0; i < cols; i++) {
             this.points[i] = [];
-            for (let j = 0; j < cols; j++) {
-                this.points[i][j] = new GridPoint(j * stepCols, i * stepRows);
+            for (let j = 0; j < rows; j++) {
+                this.points[i][j] = new GridPoint(i * stepCols, j * stepRows);
             }
         }
     }
@@ -41,12 +35,12 @@ export class Grid {
         this.points = points;
     }
 
-    getPoint(xIndex: number, yindex: number): GridPoint {
-        return this.points[yindex][xIndex];
+    getPoint(col: number, row: number): GridPoint {
+        return this.points[col][row];
     }
 
-    slice(startYIndex: number, stopYIndex: number, startXIndex: number, stopXIndex: number): Grid {
-        const slice = this.points.slice(startYIndex, stopYIndex + 1).map((i) => i.slice(startXIndex, stopXIndex + 1));
+    getSection(startCol: number, endCol: number, startRow: number, endRow: number): Grid {
+        const slice = this.points.slice(startCol, endCol + 1).map((i) => i.slice(startRow, endRow + 1));
         const gridFromSlice = new Grid(slice[0].length, slice.length, 0, 0);
         gridFromSlice.set(slice);
         return gridFromSlice;

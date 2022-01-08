@@ -6,7 +6,8 @@
   "browser": "dist/pretty-grid.js",
   "types": "dist/pretty-grid.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest"
   },
   "keywords": [
     "grid"
@@ -19,6 +20,7 @@
     "typescript": "^4.5.4"
   },
   "devDependencies": {
+    "jest": "^27.4.7",
     "prettier": "2.5.1"
   }
 }
