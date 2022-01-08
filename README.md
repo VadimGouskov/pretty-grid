@@ -10,4 +10,4 @@ Grid creation and manipulation made pretty.
 
 ## Docs
 
-The full documentation can be found at ...
+The full documentation can be found [here](https://github.com/VadimGouskov/pretty-grid/wiki)

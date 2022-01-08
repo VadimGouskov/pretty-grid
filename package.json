@@ -1,6 +1,6 @@
 {
   "name": "pretty-grid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grid creation and manipulation made pretty.",
   "author": "Vadim Gouskov",
   "homepage": "https://github.com/VadimGouskov/pretty-grid",
@@ -19,7 +19,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "publish:safe": "npm run test && npm publish"
   },
   "keywords": [
     "grid"
