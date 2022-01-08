@@ -4,14 +4,19 @@
   "description": "Grid creation and manipulation made pretty.",
   "author": "Vadim Gouskov",
   "homepage": "https://github.com/VadimGouskov/pretty-grid",
-  "repository": { 
-    "type": "git", 
-    "url":"https://github.com/VadimGouskov/pretty-grid" 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VadimGouskov/pretty-grid"
+  },
+  "bugs": {
+    "url": "https://github.com/VadimGouskov/pretty-grid/issues"
   },
   "main": "dist/pretty-grid.js",
   "browser": "dist/pretty-grid.js",
   "types": "dist/pretty-grid.d.ts",
-  "files":["/dist"],
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -20,13 +25,10 @@
     "grid"
   ],
   "license": "MIT",
-  "dependencies": {
-    "@types/p5": "^1.3.3",
-    "p5": "^1.4.0",
-    "typescript": "^4.5.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^27.4.7",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "typescript": "^4.5.4"
   }
 }
