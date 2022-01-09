@@ -23,8 +23,6 @@ grid.draw(point => ...));
 
 A browser example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/browser-simple-p5)
 
-<br />
-
 ### Node
 
 For a nodejs based project, install `pretty-grid` using:
