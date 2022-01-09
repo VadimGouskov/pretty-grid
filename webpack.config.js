@@ -23,5 +23,6 @@ module.exports = {
         name: 'prettyGrid',
         type: 'umd',
       },
+    globalObject: 'this',
   },
 };

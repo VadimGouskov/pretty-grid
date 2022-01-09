@@ -1,4 +1,4 @@
-const { Grid } = require('../dist/pretty-grid');
+const { Grid } = require('../dist/pretty-grid.js');
 
 const GRID_ROWS = 5;
 const GRID_COLS = 7;
