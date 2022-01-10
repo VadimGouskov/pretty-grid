@@ -1,6 +1,8 @@
 # Pretty Grid
 
 Grid creation and manipulation made pretty.
+<br> </br>
+<b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
 
 <br />
 
