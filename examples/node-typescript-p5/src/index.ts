@@ -21,11 +21,6 @@ const s = (p: p5) => {
         grid.draw((point) => {
             p.circle(point.x, point.y, 10);
         });
-
-        // Copying a section as a new Grid
-        const section = grid.getSection(2, 3, 4, 7);
-        p.fill('cyan');
-        section.draw((point) => p.circle(point.x, point.y, 10));
     };
 };
 

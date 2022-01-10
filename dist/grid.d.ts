@@ -10,6 +10,7 @@ export declare class Grid {
     get(): GridPoint[][];
     set(points: GridPoint[][]): void;
     getPoint(col: number, row: number): GridPoint;
-    getSection(startCol: number, endCol: number, startRow: number, endRow: number): Grid;
     draw(func: (point: GridPoint) => void): void;
+    translate(x: number, y: number): void;
+    copy(): Grid;
 }
