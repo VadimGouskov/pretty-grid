@@ -39,13 +39,13 @@ export declare class Grid {
      * Provide a drawing function
      * @param func a function that handles drawing of each individual point
      */
-    draw(func: (point: GridPoint) => void): void;
+    draw(func: (point: GridPoint) => void): Grid;
     /**
      * Translates the entire grid by @param x en @param y coordinates
      * @param x
      * @param y
      */
-    translate(x: number, y: number): void;
+    translate(x: number, y: number): Grid;
     /** Creates a deep copy of the current grid object
      */
     copy(): Grid;

@@ -70,8 +70,9 @@ export class Grid {
      * Provide a drawing function
      * @param func a function that handles drawing of each individual point
      */
-    draw(func: (point: GridPoint) => void): void {
+    draw(func: (point: GridPoint) => void): Grid {
         this.flat.forEach((point) => func(point));
+        return this;
     }
 
     /**
@@ -79,13 +80,14 @@ export class Grid {
      * @param x
      * @param y
      */
-    translate(x: number, y: number): void {
+    translate(x: number, y: number): Grid {
         this.points.forEach((col) =>
             col.forEach((point) => {
                 point.x += x;
                 point.y += y;
             }),
         );
+        return this;
     }
 
     /** Creates a deep copy of the current grid object
