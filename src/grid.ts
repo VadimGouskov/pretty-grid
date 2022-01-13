@@ -1,4 +1,4 @@
-import { Condition } from './conditions';
+import { Condition, ConditionFunction } from './conditions';
 
 export type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 
@@ -74,14 +74,13 @@ export class Grid {
      * Provide a drawing function
      * @param func a function that handles drawing of each individual point
      */
-    draw(func: GridFunction, condition?: Condition): Grid {
+    draw(func: GridFunction, condition?: ConditionFunction): void {
         this.points.forEach((col, colIndex) =>
             col.forEach((point, rowIndex) => {
                 if (!!condition && !condition(point, colIndex, rowIndex)) return;
                 func(point);
             }),
         );
-        return this;
     }
 
     /**
@@ -89,7 +88,7 @@ export class Grid {
      * @param x
      * @param y
      */
-    translate(x: number, y: number, condition?: Condition): Grid {
+    translate(x: number, y: number, condition?: ConditionFunction): Grid {
         this.points.forEach((col, colIndex) =>
             col.forEach((point, rowIndex) => {
                 if (!!condition && !condition(point, colIndex, rowIndex)) return;

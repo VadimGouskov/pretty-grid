@@ -1,5 +1,6 @@
 import { GridPoint } from './grid';
-export declare type Condition = (point: GridPoint, col?: number, row?: number) => boolean;
+export declare type ConditionFunction = (point: GridPoint, col?: number, row?: number) => boolean;
+export declare type Condition = (...args: any[]) => ConditionFunction;
 export declare const all: Condition;
 export declare const even: Condition;
 export declare const odd: Condition;
@@ -7,3 +8,5 @@ export declare const evenCols: Condition;
 export declare const oddCols: Condition;
 export declare const evenRows: Condition;
 export declare const oddRows: Condition;
+export declare const rows: (start: number, end: number) => ConditionFunction;
+export declare const cols: (start: number, end: number) => ConditionFunction;

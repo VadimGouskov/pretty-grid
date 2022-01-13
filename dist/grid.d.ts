@@ -1,4 +1,4 @@
-import { Condition } from './conditions';
+import { ConditionFunction } from './conditions';
 export declare type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 export declare class GridPoint {
     x: number;
@@ -41,13 +41,13 @@ export declare class Grid {
      * Provide a drawing function
      * @param func a function that handles drawing of each individual point
      */
-    draw(func: GridFunction, condition?: Condition): Grid;
+    draw(func: GridFunction, condition?: ConditionFunction): void;
     /**
      * Translates the entire grid by @param x en @param y coordinates
      * @param x
      * @param y
      */
-    translate(x: number, y: number, condition?: Condition): Grid;
+    translate(x: number, y: number, condition?: ConditionFunction): Grid;
     /** Creates a deep copy of the current grid object
      */
     copy(): Grid;
