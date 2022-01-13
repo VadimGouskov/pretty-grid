@@ -4,7 +4,13 @@ Grid creation and manipulation made pretty.
 <br> </br>
 <b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
 
-<br />
+
+- [Getting started](#getting-started)
+- [Core Concepts](#core-concepts)
+- [documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
+  - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
+  - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
+
 
 ## Getting started
 
@@ -41,6 +47,9 @@ import { Grid } from 'pretty-grid';
 const grid = new Grid(3, 5, 500, 500);
 grid.draw(point => ...));
 ```
+
+# Core Concepts
+fdd
 
 A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)
 
