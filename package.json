@@ -30,7 +30,6 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^27.4.7",
-    "jsdoc-plugin-typescript": "^2.0.6",
     "jsdoc-to-markdown": "^7.1.0",
     "prettier": "2.5.1",
     "ts-loader": "^9.2.6",
