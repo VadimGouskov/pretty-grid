@@ -42,6 +42,8 @@ export class Grid {
     }
 
     /**
+     * @method
+     * @name get
      * Get all the current points on the grid
      * warning: gets the points array by reference. Changes to individual points will be reflected in the original grid object.
      * To get a deep copy use grid.copy(). eg. grid.copy.get()
