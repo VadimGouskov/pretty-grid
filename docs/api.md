@@ -95,10 +95,10 @@ Gets a point from from indeces [col, row]
 
 **Kind**: global function  
 
-| Param | Description |
-| --- | --- |
-| col | the col index |
-| row | the row index |
+| Param | Type | Description |
+| --- | --- | --- |
+| col | <code>number</code> | the col index |
+| row | <code>number</code> | the row index |
 
 <a name="draw"></a>
 
@@ -133,4 +133,4 @@ Translates the entire grid by x en y coordinates
 Creates a deep copy of the current grid object
 
 **Kind**: global function  
-**Returns**: [<code>Grid</code>](#Grid) - a new instance of Grid of with the same gridpoint values as @this Grid  
+**Returns**: [<code>Grid</code>](#Grid) - a new instance of Grid of with the same coordinate values as @this Grid  

@@ -89,8 +89,8 @@ export class Grid {
      * Gets a point from from indeces [col, row]
      * @method
      * @name getPoint
-     * @param col - the col index
-     * @param row - the row index
+     * @param {number} col - the col index
+     * @param {number} row - the row index
      * @returns {GridPoint}
      */
 
