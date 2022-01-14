@@ -47,11 +47,11 @@ import { Grid } from 'pretty-grid';
 const grid = new Grid(3, 5, 500, 500);
 grid.draw(point => ...));
 ```
+A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)
+
 
 # Core Concepts
-fdd
-
-A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)
+TODO
 
 <br />
 
