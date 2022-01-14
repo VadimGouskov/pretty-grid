@@ -20,7 +20,8 @@
   "scripts": {
     "build": "webpack",
     "test": "jest",
-    "publish:safe": "npm run test && npm publish"
+    "publish:safe": "npm run test && npm publish",
+    "docs": "node docs/generate.js"
   },
   "keywords": [
     "grid"
@@ -29,6 +30,8 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^27.4.7",
+    "jsdoc-plugin-typescript": "^2.0.6",
+    "jsdoc-to-markdown": "^7.1.0",
     "prettier": "2.5.1",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
