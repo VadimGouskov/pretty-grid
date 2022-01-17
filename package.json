@@ -27,7 +27,6 @@
     "grid"
   ],
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "jest": "^27.4.7",
     "jsdoc-to-markdown": "^7.1.0",
