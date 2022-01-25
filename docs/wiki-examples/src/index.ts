@@ -29,7 +29,7 @@ const s = (p: p5) => {
 
         // Chaining 
 
-        // Conditionals
+        // Conditions
 
         // Operators
 

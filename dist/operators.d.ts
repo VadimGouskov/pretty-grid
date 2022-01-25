@@ -1,4 +1,4 @@
-import { ConditionFunction } from './conditions';
-export declare type Operator = (...conditions: ConditionFunction[]) => ConditionFunction;
+import { Condition } from './conditions';
+export declare type Operator = (...conditions: Condition[]) => Condition;
 export declare const and: Operator;
 export declare const or: Operator;

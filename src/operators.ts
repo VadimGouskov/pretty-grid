@@ -1,8 +1,8 @@
-import { ConditionFunction } from './conditions';
+import { Condition } from './conditions';
 
-export type Operator = (...conditions: ConditionFunction[]) => ConditionFunction;
+export type Operator = (...conditions: Condition[]) => Condition;
 
-export const and: Operator = (...conditions: ConditionFunction[]) => {
+export const and: Operator = (...conditions: Condition[]) => {
     return (point, col, row) => {
         for (let condition of conditions) {
             if (!condition(point, col, row)) return false;
@@ -11,7 +11,7 @@ export const and: Operator = (...conditions: ConditionFunction[]) => {
     };
 };
 
-export const or: Operator = (...conditions: ConditionFunction[]) => {
+export const or: Operator = (...conditions: Condition[]) => {
     return (point, col, row) => {
         for (let condition of conditions) {
             if (condition(point, col, row)) return true;
