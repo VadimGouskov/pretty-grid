@@ -1,4 +1,4 @@
-import { Grid } from 'pretty-grid';
+import { Grid, evenRows } from 'pretty-grid';
 import p5 from 'p5';
 
 const s = (p: p5) => {
@@ -22,18 +22,23 @@ const s = (p: p5) => {
         // Drawing
 
         // Translating
+        /*
         exportName = "translate";
         grid.draw(point => whiteDot(point.x, point.y));
         grid.translate(25, 10);
         grid.draw(point => orangeDot(point.x, point.y));
-
+*/
         // Chaining 
 
         // Conditions
 
+        exportName = "conditions-evenRows";
+        grid.draw(point => whiteDot(point.x, point.y));
+        grid.draw(point => orangeCircle(point.x, point.y), evenRows());
+
         // Operators
 
-        // p.saveCanvas(exportName, "png");
+        p.saveCanvas(exportName, "png");
 
     };
 
@@ -52,6 +57,16 @@ const s = (p: p5) => {
     const drawDot = (x: number, y: number, color: string) => {
         p.fill(color);
         p.circle(x, y, 10)
+    }
+
+    const orangeCircle = (x: number, y: number) => {
+        p.push();
+        p.noFill();
+        p.stroke("#ff6700");
+        p.strokeWeight(3)
+        p.circle(x, y, 20)
+        p.pop()
+
     }
 };
 
