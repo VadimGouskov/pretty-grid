@@ -68,9 +68,6 @@ grid.draw(point => ...));
 A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)
 
 
-## Core Concepts
-
-
 <br />
 
 ## Docs
