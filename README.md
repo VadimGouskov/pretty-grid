@@ -1,9 +1,8 @@
 # Pretty Grid
+A grid drawing library
 
-Grid creation and manipulation made pretty.
 <br> </br>
 <b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
-
 
 - [Getting started](#getting-started)
 - [Core Concepts](#core-concepts)
@@ -11,6 +10,21 @@ Grid creation and manipulation made pretty.
   - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
   - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
 
+
+## Introduction 
+Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
+`pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
+
+for example:
+```js
+// Grid (cols, rows, width, height)
+const grid = new Grid(20, 10, 500, 500);
+grid.draw(point => whiteDot(point.x, point.y));
+grid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
+grid.translate(10,10)
+    .draw(point => blueDot(point.x, point.y), evenRows());
+```
+![intro](assets/intro.png)
 
 ## Getting started
 
@@ -51,7 +65,7 @@ A node based example project can be found [here](https://github.com/VadimGouskov
 
 
 ## Core Concepts
-TODO
+
 
 <br />
 
