@@ -3,6 +3,13 @@ A grid drawing library
 
 <b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
 
+## Table of contents
+- [Introduction](#introduction)
+- [Getting started](#getting-started)
+- [documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
+  - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
+  - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
+
 ## Introduction 
 Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
 `pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
@@ -22,13 +29,6 @@ results in:
 ![intro](assets/intro.png)
 
 > To make this example unopinionated, we illustrate this example using the `whiteDot`,  `orangeCircle` and  `blueDot` pseudo methods to draw a grid on an html canvas. You as the developer, implement your own functions to draw to your target of choice.
-
-## Table of contents
-- [Introduction](#introduction)
-- [Getting started](#getting-started)
-- [documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
-  - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
-  - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
 
 ## Getting started
 
