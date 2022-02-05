@@ -21,7 +21,7 @@ results in:
 
 ![intro](assets/intro.png)
 
-> To make this example unopinionated, we illustrate this example using the `whiteDot`,  `orangeCircle ` and  `blueDot` pseudo methods to draw a grid on an html canvas. You as the developer, implement your own functions to draw to your target of choice.
+> To make this example unopinionated, we illustrate this example using the `whiteDot`,  `orangeCircle` and  `blueDot` pseudo methods to draw a grid on an html canvas. You as the developer, implement your own functions to draw to your target of choice.
 
 ## Table of contents
 - [Introduction](#introduction)
