@@ -15,7 +15,7 @@ A grid drawing library
 Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
 `pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
 
-for example:
+Using a couple of lines of code, you can already create a pretty complex looking grid structure.
 ```js
 // Grid (cols, rows, width, height)
 const grid = new Grid(20, 10, 500, 500);
@@ -24,7 +24,10 @@ grid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
 grid.translate(10,10)
     .draw(point => blueDot(point.x, point.y), evenRows());
 ```
+results in:
 ![intro](assets/intro.png)
+
+> To make this example unopinionated, we illustrate this example using the `whiteDot, orangeCircle and blueDot` pseudo drawing methods. You as the developer, implement your own functions to draw to the target choice.
 
 ## Getting started
 
