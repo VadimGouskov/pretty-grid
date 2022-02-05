@@ -7,7 +7,7 @@ A grid drawing library
 Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
 `pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
 
-Using a couple of lines of code, you can already create a pretty complex looking grid structure.
+Using a couple of lines of code, you can already create a pretty complex looking grid.
 ```js
 // Grid (cols, rows, width, height)
 const grid = new Grid(20, 10, 500, 500);
