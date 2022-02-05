@@ -4,7 +4,7 @@ A grid drawing library
 <br> </br>
 <b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
 
-- [Introduciton](#introduction)
+- [Introduction](#introduction)
 - [Getting started](#getting-started)
 - [documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
   - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
@@ -23,12 +23,13 @@ grid.draw(point => whiteDot(point.x, point.y));
 grid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
 grid.translate(10,10)
     .draw(point => blueDot(point.x, point.y), evenRows());
+...
 ```
 results in:
 
 ![intro](assets/intro.png)
 
-> To make this example unopinionated, we illustrate this example using the `whiteDot `,  `orangeCircle ` and  `blueDot` pseudo drawing methods. You as the developer, implement your own functions to draw to your target of choice.
+> To make this example unopinionated, we illustrate this example using the `whiteDot `,  `orangeCircle ` and  `blueDot` pseudo drawing methods to draw a grid on an image. You as the developer, implement your own functions to draw to your target of choice.
 
 ## Getting started
 
