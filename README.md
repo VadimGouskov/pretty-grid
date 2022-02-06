@@ -74,7 +74,8 @@ A node based example project can be found [here](https://github.com/VadimGouskov
 
 The full documentation can be found [here](https://github.com/VadimGouskov/pretty-grid/wiki)
 
-## TODO
+
+## TODO
 - Radial Grid
 - 3D Grid
 - ...
