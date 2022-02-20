@@ -1,4 +1,4 @@
-import { Grid, evenRows } from 'pretty-grid';
+import { Grid, evenRows, and, evenCols, oddRows, oddCols, odd } from 'pretty-grid';
 import p5 from 'p5';
 
 const s = (p: p5) => {
@@ -6,7 +6,7 @@ const s = (p: p5) => {
     const CANVAS_HEIGHT = 500;
     let exportName = "simple";
 
-    const grid = new Grid(5, 10, CANVAS_WIDTH, CANVAS_HEIGHT);
+    const grid = new Grid(5, 8, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     p.setup = () => {
         const canvas = p.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -25,18 +25,32 @@ const s = (p: p5) => {
         /*
         exportName = "translate";
         grid.draw(point => whiteDot(point.x, point.y));
-        grid.translate(25, 10);
-        grid.draw(point => orangeDot(point.x, point.y));
-*/
+        grid.translate(10, 20);
+        grid.draw(point => orangeCircle(point.x, point.y));
+        */
         // Chaining 
 
         // Conditions
-
+        /*
         exportName = "conditions-evenRows";
         grid.draw(point => whiteDot(point.x, point.y));
-        grid.draw(point => orangeCircle(point.x, point.y), evenRows());
+        */
+        //grid.draw(point => orangeCircle(point.x, point.y), evenRows());
 
         // Operators
+        /*
+        exportName = "operators";
+        grid.draw(point => whiteDot(point.x, point.y));
+        grid.draw(point => orangeCircle(point.x, point.y), and(evenCols(), oddRows()));
+        */
+
+        // introduciton
+        exportName = "intro";
+        const introGrid = new Grid(20, 10, 500, 500);
+        introGrid.draw(point => whiteDot(point.x, point.y));
+        introGrid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
+        introGrid.translate(10,10)
+        introGrid.draw(point => blueDot(point.x, point.y), evenRows());
 
         p.saveCanvas(exportName, "png");
 

@@ -50,13 +50,19 @@ Provide a drawing function</p>
 
 | Name | Type | Description |
 | --- | --- | --- |
-| x: | <code>number</code> | the x coordinate of the point |
-| y: | <code>number</code> | the x coordinate of the point |
+| x | <code>number</code> | the x coordinate of the point |
+| y | <code>number</code> | the x coordinate of the point |
 
 <a name="new_GridPoint_new"></a>
 
-### new GridPoint()
+### new GridPoint(x, y)
 Represent a single point on the grid.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| x | <code>number</code> | the x coordinate of the point |
+| y | <code>number</code> | the x coordinate of the point |
 
 <a name="Grid"></a>
 
@@ -64,8 +70,16 @@ Represent a single point on the grid.
 **Kind**: global class  
 <a name="new_Grid_new"></a>
 
-### new Grid()
+### new Grid(cols, rows, width, height)
 The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| cols | <code>number</code> | the amount of columns the grid needs to contain |
+| rows | <code>number</code> | the amount of rows the grid needs to contain |
+| width | <code>number</code> | the width of the grid |
+| height | <code>number</code> | the height of the grid |
 
 <a name="flat"></a>
 
@@ -111,7 +125,7 @@ Provide a drawing function
 | Param | Type | Description |
 | --- | --- | --- |
 | func | <code>GridFunction</code> | a function that handles drawing of each individual point |
-| condition | <code>ConditionFunction</code> | an optional condition for which points to draw |
+| condition | <code>Condition</code> | an optional condition for which points to draw |
 
 <a name="translate"></a>
 
@@ -125,7 +139,7 @@ Translates the entire grid by x en y coordinates
 | --- | --- | --- |
 | x | <code>number</code> | the x coordinates to translate the points with |
 | y | <code>number</code> | the y coordinates to translate the points with |
-| [condition] | <code>ConditionFunction</code> | an optional condition for which points to translate |
+| [condition] | <code>Condition</code> | an optional condition for which points to translate |
 
 <a name="copy"></a>
 

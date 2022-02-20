@@ -6,8 +6,10 @@ export type GridFunction = (point: GridPoint, col?: number, row?: number) => voi
  * Represent a single point on the grid.
  * @class
  * @name GridPoint
- * @property {number} x: the x coordinate of the point
- * @property {number} y: the x coordinate of the point
+ * @param {number} x the x coordinate of the point
+ * @param {number} y the x coordinate of the point
+ * @property {number} x the x coordinate of the point
+ * @property {number} y the x coordinate of the point
  */
 export class GridPoint {
     x: number;
@@ -22,6 +24,10 @@ export class GridPoint {
  * The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
  * @class
  * @name Grid
+ * @param {number} cols the amount of columns the grid needs to contain
+ * @param {number} rows the amount of rows the grid needs to contain
+ * @param {number} width the width of the grid
+ * @param {number} height the height of the grid
  */
 export class Grid {
     private points: GridPoint[][] = [[]];
@@ -30,11 +36,7 @@ export class Grid {
      * Instantiates a new 2 Dimensional Grid.
      * The horizontal distance between each column: width / (cols - 1)
      * The vertical distance between each row : height / (rows - 1)
-     * @constructor
-     * @param cols
-     * @param rows
-     * @param width
-     * @param height
+ 
      */
     constructor(cols: number, rows: number, width: number, height: number) {
         const stepCols = width / (cols - 1);
