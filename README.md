@@ -11,7 +11,7 @@ A grid drawing library
   - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
 
 ## Introduction 
-Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
+Creating and manipulating elements in grid structures involves a lot of repetative code involving nested for loops and n-d arrays. 
 `pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
 
 Using a couple of lines of code, you can already create a pretty complex looking grid.
