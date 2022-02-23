@@ -44,3 +44,9 @@ test('Translate the entire grid', () => {
     // cleanup
     grid.translate(-tx, -ty)
 })
+
+test('Test the getFlat funcions length', () => {
+    const pointsArray = grid.getFlat();
+
+    expect(pointsArray.length).toBe(GRID_COLS * GRID_ROWS);    
+})

@@ -50,14 +50,6 @@ export class Grid {
             }
         }
     }
-    /**
-     * returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
-     * @name flat
-     * @type {GridPoint[]}
-     */
-    get flat(): GridPoint[] {
-        return this.points.reduce((acc, val) => acc.concat(val), []);
-    }
 
     /**
      * Get all the current points on the grid
@@ -76,7 +68,7 @@ export class Grid {
 
     /**
      * Replaces all the current points on the grid
-     * warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array.
+     * <b> warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array. </b>
      * @method
      * @name set
      *
@@ -98,6 +90,16 @@ export class Grid {
 
     getPoint(col: number, row: number): GridPoint {
         return this.points[col][row];
+    }
+
+    /**
+     * returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
+     * @method
+     * @name getFlat
+     * @type {GridPoint[]}
+     */
+    getFlat(): GridPoint[] {
+        return this.points.reduce((acc, val) => acc.concat(val), []);
     }
 
     /**

@@ -4,8 +4,10 @@ export declare type GridFunction = (point: GridPoint, col?: number, row?: number
  * Represent a single point on the grid.
  * @class
  * @name GridPoint
- * @property {number} x: the x coordinate of the point
- * @property {number} y: the x coordinate of the point
+ * @param {number} x the x coordinate of the point
+ * @param {number} y the x coordinate of the point
+ * @property {number} x the x coordinate of the point
+ * @property {number} y the x coordinate of the point
  */
 export declare class GridPoint {
     x: number;
@@ -16,6 +18,10 @@ export declare class GridPoint {
  * The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
  * @class
  * @name Grid
+ * @param {number} cols the amount of columns the grid needs to contain
+ * @param {number} rows the amount of rows the grid needs to contain
+ * @param {number} width the width of the grid
+ * @param {number} height the height of the grid
  */
 export declare class Grid {
     private points;
@@ -23,19 +29,9 @@ export declare class Grid {
      * Instantiates a new 2 Dimensional Grid.
      * The horizontal distance between each column: width / (cols - 1)
      * The vertical distance between each row : height / (rows - 1)
-     * @constructor
-     * @param cols
-     * @param rows
-     * @param width
-     * @param height
+ 
      */
     constructor(cols: number, rows: number, width: number, height: number);
-    /**
-     * returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
-     * @name flat
-     * @type {GridPoint[]}
-     */
-    get flat(): GridPoint[];
     /**
      * Get all the current points on the grid
      * warning: gets the points array by reference. Changes to individual points will be reflected in the original grid object.
@@ -50,7 +46,7 @@ export declare class Grid {
     get(): GridPoint[][];
     /**
      * Replaces all the current points on the grid
-     * warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array.
+     * <b> warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array. </b>
      * @method
      * @name set
      *
@@ -66,6 +62,12 @@ export declare class Grid {
      * @returns {GridPoint}
      */
     getPoint(col: number, row: number): GridPoint;
+    /**
+     * returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
+     * @name flat
+     * @type {GridPoint[]}
+     */
+    getFlat(): GridPoint[];
     /**
      * Loops over the points in the grid, passing each point to the provided func parameter
      * Provide a drawing function

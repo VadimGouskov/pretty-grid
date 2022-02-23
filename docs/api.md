@@ -7,14 +7,6 @@
 <dd></dd>
 </dl>
 
-## Members
-
-<dl>
-<dt><a href="#flat">flat</a> : <code><a href="#GridPoint">Array.&lt;GridPoint&gt;</a></code></dt>
-<dd><p>returns a one dimensional array of GridPoints of the grid. One column pushed after the other.</p>
-</dd>
-</dl>
-
 ## Functions
 
 <dl>
@@ -25,10 +17,13 @@ To get a deep copy use grid.copy(). eg. grid.copy.get()</p>
 </dd>
 <dt><a href="#set">set()</a> ⇒ <code>void</code></dt>
 <dd><p>Replaces all the current points on the grid
-warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array.</p>
+<b> warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array. </b></p>
 </dd>
 <dt><a href="#getPoint">getPoint(col, row)</a> ⇒ <code><a href="#GridPoint">GridPoint</a></code></dt>
 <dd><p>Gets a point from from indeces [col, row]</p>
+</dd>
+<dt><a href="#getFlat">getFlat()</a> ⇒ <code><a href="#GridPoint">Array.&lt;GridPoint&gt;</a></code></dt>
+<dd><p>returns a one dimensional array of GridPoints of the grid. One column pushed after the other.</p>
 </dd>
 <dt><a href="#draw">draw(func, condition)</a> ⇒ <code>void</code></dt>
 <dd><p>Loops over the points in the grid, passing each point to the provided func parameter
@@ -81,12 +76,6 @@ The main Grid class containing all a two dimensional array of GridPoints and met
 | width | <code>number</code> | the width of the grid |
 | height | <code>number</code> | the height of the grid |
 
-<a name="flat"></a>
-
-## flat : [<code>Array.&lt;GridPoint&gt;</code>](#GridPoint)
-returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
-
-**Kind**: global variable  
 <a name="get"></a>
 
 ## get() ⇒ <code>Array.&lt;Array.&lt;GridPoint&gt;&gt;</code>
@@ -99,7 +88,7 @@ To get a deep copy use grid.copy(). eg. grid.copy.get()
 
 ## set() ⇒ <code>void</code>
 Replaces all the current points on the grid
-warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array.
+<b> warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array. </b>
 
 **Kind**: global function  
 <a name="getPoint"></a>
@@ -114,6 +103,12 @@ Gets a point from from indeces [col, row]
 | col | <code>number</code> | the col index |
 | row | <code>number</code> | the row index |
 
+<a name="getFlat"></a>
+
+## getFlat() ⇒ [<code>Array.&lt;GridPoint&gt;</code>](#GridPoint)
+returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
+
+**Kind**: global function  
 <a name="draw"></a>
 
 ## draw(func, condition) ⇒ <code>void</code>
