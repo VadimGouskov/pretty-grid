@@ -11,7 +11,7 @@ A grid drawing library
   - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
 
 ## Introduction 
-Creating and manipulating elements in grid structures involves a lot of boilerplate code involving nested for loops. 
+Creating and manipulating elements in grid structures involves a lot of repetative code involving nested for loops and n-d arrays. 
 `pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
 
 Using a couple of lines of code, you can already create a pretty complex looking grid.
@@ -79,3 +79,11 @@ The full documentation can be found [here](https://github.com/VadimGouskov/prett
 - Radial Grid
 - 3D Grid
 - ...
+
+## Contributing
+The goal of `pretty-grid` is to make grid drawing easier for everybody.
+If you have a suggestion about the docs, API, tutorials or somethıng else, please post it in one of the folowing ways:
+- [Open an issue](https://github.com/VadimGouskov/pretty-grid/issues) on GitHub and tag it with the green "Suggestion" label
+- Fill out [this form](https://forms.office.com/r/Pz7nQk2iBA)
+
+PRs by other contributers are not accepted in this early stage of development.
