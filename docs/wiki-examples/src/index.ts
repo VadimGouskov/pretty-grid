@@ -44,15 +44,39 @@ const s = (p: p5) => {
         grid.draw(point => orangeCircle(point.x, point.y), and(evenCols(), oddRows()));
         */
 
-        // introduciton
+        // introduction
+        /*
         exportName = "intro";
         const introGrid = new Grid(20, 10, 500, 500);
         introGrid.draw(point => whiteDot(point.x, point.y));
         introGrid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
         introGrid.translate(10,10)
         introGrid.draw(point => blueDot(point.x, point.y), evenRows());
+        */
 
-        p.saveCanvas(exportName, "png");
+        // vanilla js
+        exportName = "vanillajs"
+        // initialize grid
+        const COLS_AMOUNT = 5;
+        const ROWS_AMOUNT = 8;
+        const GRID_WIDTH = 500;
+        const GRID_HEIGHT = 500; 
+
+        const COLS_DISTANCE = GRID_WIDTH / (COLS_AMOUNT - 1);
+        const ROWS_DISTANCE = GRID_HEIGHT/ (ROWS_AMOUNT - 1);
+        const points = [];
+        
+        for (let i = 0; i < COLS_AMOUNT; i++) {
+            points[i] = [];
+            for (let j = 0; j < ROWS_AMOUNT; j++) {
+                points[i][j] = { 
+                    x : i * COLS_DISTANCE, 
+                    y : j * ROWS_DISTANCE
+                };
+            }
+        }
+
+        // p.saveCanvas(exportName, "png");
 
     };
 

@@ -11,10 +11,41 @@ A grid drawing library
   - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
 
 ## Introduction 
-Creating and manipulating elements in grid structures involves a lot of repetative code involving nested for loops and n-d arrays. 
-`pretty-grid` provides a range of classes and methods to do the heavy lifting so you can focus on the esthetics and logic of your grid structures.
+Creating and manipulating a grid layout on an x-y plane requires repetative code involving nested for loops and n-d arrays. `pretty-grid` makes this process more straight-forward, readable and versatile.
 
-Using a couple of lines of code, you can already create a pretty complex looking grid.
+The example below illustrates how `pretty-grid` simplifies creating a grid layout with the following parameters:
+```js
+  const COLS_AMOUNT = 5;
+  const ROWS_AMOUNT = 8;
+  const GRID_WIDTH = 500;
+  const GRID_HEIGHT = 500; 
+```
+
+Using vanilla JavaScript:
+```js
+
+  const COLS_DISTANCE = GRID_WIDTH / (COLS_AMOUNT - 1);
+  const ROWS_DISTANCE = GRID_HEIGHT/ (ROWS_AMOUNT - 1);
+  const grid = [];
+  
+  for (let i = 0; i < COLS_AMOUNT; i++) {
+      grid[i] = [];
+      for (let j = 0; j < ROWS_AMOUNT; j++) {
+          grid[i][j] = { 
+              x : i * COLS_DISTANCE, 
+              y : j * ROWS_DISTANCE
+          };
+      }
+  }
+```
+
+Using `pretty-grid`, this simplifies to:
+
+```js
+const grid = new Grid(COLS_AMOUNT, ROWS_AMOUNT, GRID_WIDTH, GRID_HEIGHT);
+```
+
+Using a couple of `pretty-grid`'s helper methods you can already create a complex looking grid layout:
 ```js
 // Grid (cols, rows, width, height)
 const grid = new Grid(20, 10, 500, 500);
@@ -24,7 +55,7 @@ grid.translate(10,10)
     .draw(point => blueDot(point.x, point.y), evenRows());
 ...
 ```
-results in:
+This results in:
 
 ![intro](assets/intro.png)
 
