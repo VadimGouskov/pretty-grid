@@ -6,9 +6,10 @@ A grid drawing library
 ## Table of contents
 - [Introduction](#introduction)
 - [Getting started](#getting-started)
-- [documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
+- [Documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
   - [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
   - [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
+- [Examples](#examples)
 
 ## Introduction 
 Creating and manipulating a grid layout on an x-y plane requires repetative code involving nested for loops and n-d arrays. `pretty-grid` makes this process more straight-forward, readable and versatile.
@@ -55,6 +56,8 @@ grid.translate(10,10)
     .draw(point => blueDot(point.x, point.y), evenRows());
 ...
 ```
+> Check [this p5.js Playground](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2) for the full code example.
+
 This results in:
 
 ![intro](assets/intro.png)
@@ -104,6 +107,11 @@ A node based example project can be found [here](https://github.com/VadimGouskov
 ## Docs
 
 The full documentation can be found [here](https://github.com/VadimGouskov/pretty-grid/wiki)
+
+## Examples
+- [Hello World](https://editor.p5js.org/VadimGouskov/sketches/m7-A9JZzn)
+- [Translating](https://editor.p5js.org/VadimGouskov/sketches/z5YkEcAWR)
+- [README example](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2)
 
 
 ## TODO
