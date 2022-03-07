@@ -108,6 +108,11 @@ The full documentation can be found [here](https://github.com/VadimGouskov/prett
 ## Examples
 - [Hello World](https://editor.p5js.org/VadimGouskov/sketches/m7-A9JZzn)
 - [Translating](https://editor.p5js.org/VadimGouskov/sketches/z5YkEcAWR)
+- [Operators: AND](https://editor.p5js.org/VadimGouskov/sketches/mp0Y_3N-S)
+- [Operators: OR](https://editor.p5js.org/VadimGouskov/sketches/TsPk41HtS)
+- [Operators: NOT](https://editor.p5js.org/VadimGouskov/sketches/Y8WipTN7U)
+- [Operators: AND OR NOT Combined](https://editor.p5js.org/VadimGouskov/sketches/owm9JDEHe)
+- [Custom Operators](https://editor.p5js.org/VadimGouskov/sketches/mHWaqUVFP)
 - [README example](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2)
 
 
