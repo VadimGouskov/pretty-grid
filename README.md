@@ -106,6 +106,7 @@ A node based example project can be found [here](https://github.com/VadimGouskov
 The full documentation can be found [here](https://github.com/VadimGouskov/pretty-grid/wiki)
 
 ## Examples
+
 - [Hello World](https://editor.p5js.org/VadimGouskov/sketches/m7-A9JZzn)
 - [Translating](https://editor.p5js.org/VadimGouskov/sketches/z5YkEcAWR)
 - [Operators: AND](https://editor.p5js.org/VadimGouskov/sketches/mp0Y_3N-S)
@@ -115,6 +116,8 @@ The full documentation can be found [here](https://github.com/VadimGouskov/prett
 - [Custom Operators](https://editor.p5js.org/VadimGouskov/sketches/mHWaqUVFP)
 - [README example](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2)
 
+
+> These editable code examples are created using p5.js playground. Feel free to use `pretty-grid` in combination with other js (drawing) libraries. The full p5.js playground collection can be found [here](https://editor.p5js.org/VadimGouskov/collections/1uEQLKloQ).
 
 ## TODO
 - Radial Grid
