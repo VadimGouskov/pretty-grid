@@ -19,3 +19,7 @@ export const or: Operator = (...conditions: Condition[]) => {
         return false;
     };
 };
+
+export const not: Operator = (condition: Condition) => {
+    return (point, col, row) => !condition(point, col, row);
+};

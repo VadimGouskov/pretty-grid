@@ -64,7 +64,8 @@ export declare class Grid {
     getPoint(col: number, row: number): GridPoint;
     /**
      * returns a one dimensional array of GridPoints of the grid. One column pushed after the other.
-     * @name flat
+     * @method
+     * @name getFlat
      * @type {GridPoint[]}
      */
     getFlat(): GridPoint[];
@@ -75,9 +76,9 @@ export declare class Grid {
      * @name draw
      * @param {GridFunction} func - a function that handles drawing of each individual point
      * @param {Condition} condition - an optional condition for which points to draw
-     * @returns {void}
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
-    draw(func: GridFunction, condition?: Condition): void;
+    draw(func: GridFunction, condition?: Condition): Grid;
     /**
      * Translates the entire grid by x en y coordinates
      * @method

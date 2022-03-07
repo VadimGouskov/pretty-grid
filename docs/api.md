@@ -25,7 +25,7 @@ To get a deep copy use grid.copy(). eg. grid.copy.get()</p>
 <dt><a href="#getFlat">getFlat()</a> ⇒ <code><a href="#GridPoint">Array.&lt;GridPoint&gt;</a></code></dt>
 <dd><p>returns a one dimensional array of GridPoints of the grid. One column pushed after the other.</p>
 </dd>
-<dt><a href="#draw">draw(func, condition)</a> ⇒ <code>void</code></dt>
+<dt><a href="#draw">draw(func, condition)</a> ⇒ <code><a href="#Grid">Grid</a></code></dt>
 <dd><p>Loops over the points in the grid, passing each point to the provided func parameter
 Provide a drawing function</p>
 </dd>
@@ -111,11 +111,12 @@ returns a one dimensional array of GridPoints of the grid. One column pushed aft
 **Kind**: global function  
 <a name="draw"></a>
 
-## draw(func, condition) ⇒ <code>void</code>
+## draw(func, condition) ⇒ [<code>Grid</code>](#Grid)
 Loops over the points in the grid, passing each point to the provided func parameter
 Provide a drawing function
 
 **Kind**: global function  
+**Returns**: [<code>Grid</code>](#Grid) - returns @this Grid Object. Used for chaining Grid methods  
 
 | Param | Type | Description |
 | --- | --- | --- |

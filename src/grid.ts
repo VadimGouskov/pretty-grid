@@ -109,15 +109,16 @@ export class Grid {
      * @name draw
      * @param {GridFunction} func - a function that handles drawing of each individual point
      * @param {Condition} condition - an optional condition for which points to draw
-     * @returns {void}
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
-    draw(func: GridFunction, condition?: Condition): void {
+    draw(func: GridFunction, condition?: Condition): Grid {
         this.points.forEach((col, colIndex) =>
             col.forEach((point, rowIndex) => {
                 if (!!condition && !condition(point, colIndex, rowIndex)) return;
                 func(point);
             }),
         );
+        return this;
     }
 
     /**
