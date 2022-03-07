@@ -1,7 +1,4 @@
 # Pretty Grid
-A grid drawing library
-
-<b> This package is in alpha, so it is subject to heavy API changes during this early stage of development </b>
 
 ## Table of contents
 - [Introduction](#introduction)
