@@ -3,6 +3,16 @@ import { Condition } from './conditions';
 export type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 
 /**
+ * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor
+ * @readonly
+ * @enum {number}
+ */
+export enum GridShape {
+    RECTANGLE = 0,
+    ELLIPSE = 1,
+}
+
+/**
  * Represent a single point on the grid.
  * @class
  * @name GridPoint
@@ -28,6 +38,7 @@ export class GridPoint {
  * @param {number} rows the amount of rows the grid needs to contain
  * @param {number} width the width of the grid
  * @param {number} height the height of the grid
+ * @param {GridShape} [shape] the shape of the grid (RECTANGLE or ELLIPSE). Defaults to a rectangular shaped grid.
  */
 export class Grid {
     private points: GridPoint[][] = [[]];
@@ -38,15 +49,55 @@ export class Grid {
      * The vertical distance between each row : height / (rows - 1)
  
      */
-    constructor(cols: number, rows: number, width: number, height: number) {
+    constructor(cols: number, rows: number, width: number, height: number, shape?: GridShape) {
+        if (cols === 0) {
+            cols = 1;
+            console.warn('Cannot create a grid with 0 columns, cols defaults to 1');
+        }
+
+        if (rows === 0) {
+            rows = 1;
+            console.warn('Cannot create a grid with 0 rows, rows defaults to 1');
+        }
+
+        // initialize grid
+        if (shape === GridShape.ELLIPSE) {
+            this.initEllipseGrid(cols, rows, width, height);
+        } else {
+            // default to rectangle grid
+            this.initRectangleGrid(cols, rows, width, height);
+        }
+    }
+
+    private initRectangleGrid(cols: number, rows: number, width: number, height: number): void {
         const stepCols = width / (cols - 1);
         const stepRows = height / (rows - 1);
 
-        // initialize grid
         for (let i = 0; i < cols; i++) {
             this.points[i] = [];
             for (let j = 0; j < rows; j++) {
                 this.points[i][j] = new GridPoint(i * stepCols, j * stepRows);
+            }
+        }
+    }
+
+    private initEllipseGrid(cols: number, rows: number, width: number, height: number): void {
+        const heightStep = height / rows;
+        const widthStep = width / rows;
+        const radialStep = (Math.PI * 2) / cols;
+
+        for (let col = 0; col < cols; col++) {
+            this.points[col] = [];
+            const theta = col * radialStep;
+
+            for (let row = rows; row >= 1; row--) {
+                const ringWidth = row * widthStep;
+                const ringHeight = row * heightStep;
+
+                let pointX = (ringWidth / 2) * Math.cos(theta);
+                let pointY = (ringHeight / 2) * Math.sin(theta);
+
+                this.points[col][row - 1] = new GridPoint(pointX, pointY);
             }
         }
     }
