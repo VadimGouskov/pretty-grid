@@ -80,7 +80,8 @@ The main Grid class containing all a two dimensional array of GridPoints and met
 <a name="GridShape"></a>
 
 ## GridShape : <code>enum</code>
-Enum used to determine the grid shape in the [Grid](#Grid) constructor
+Enum used to determine the grid shape in the [Grid](#Grid) constructor.
+Values: RECTANGLE or ELLIPSE.
 
 **Kind**: global enum  
 **Read only**: true  

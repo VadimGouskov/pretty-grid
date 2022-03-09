@@ -1,7 +1,8 @@
 import { Condition } from './conditions';
 export declare type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 /**
- * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor
+ * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor.
+ * Values: RECTANGLE or ELLIPSE.
  * @readonly
  * @enum {number}
  */
