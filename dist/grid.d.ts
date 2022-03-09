@@ -1,6 +1,15 @@
 import { Condition } from './conditions';
 export declare type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 /**
+ * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor
+ * @readonly
+ * @enum {number}
+ */
+export declare enum GridShape {
+    RECTANGLE = 0,
+    ELLIPSE = 1
+}
+/**
  * Represent a single point on the grid.
  * @class
  * @name GridPoint
@@ -22,6 +31,7 @@ export declare class GridPoint {
  * @param {number} rows the amount of rows the grid needs to contain
  * @param {number} width the width of the grid
  * @param {number} height the height of the grid
+ * @param {GridShape} [shape] the shape of the grid (RECTANGLE or ELLIPSE). Defaults to a rectangular shaped grid.
  */
 export declare class Grid {
     private points;
@@ -31,7 +41,9 @@ export declare class Grid {
      * The vertical distance between each row : height / (rows - 1)
  
      */
-    constructor(cols: number, rows: number, width: number, height: number);
+    constructor(cols: number, rows: number, width: number, height: number, shape?: GridShape);
+    private initRectangleGrid;
+    private initEllipseGrid;
     /**
      * Get all the current points on the grid
      * warning: gets the points array by reference. Changes to individual points will be reflected in the original grid object.

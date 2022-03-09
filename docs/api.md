@@ -65,7 +65,7 @@ Represent a single point on the grid.
 **Kind**: global class  
 <a name="new_Grid_new"></a>
 
-### new Grid(cols, rows, width, height)
+### new Grid(cols, rows, width, height, [shape])
 The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
 
 
@@ -75,7 +75,15 @@ The main Grid class containing all a two dimensional array of GridPoints and met
 | rows | <code>number</code> | the amount of rows the grid needs to contain |
 | width | <code>number</code> | the width of the grid |
 | height | <code>number</code> | the height of the grid |
+| [shape] | [<code>GridShape</code>](#GridShape) | the shape of the grid (RECTANGLE or ELLIPSE). Defaults to a rectangular shaped grid. |
 
+<a name="GridShape"></a>
+
+## GridShape : <code>enum</code>
+Enum used to determine the grid shape in the [Grid](#Grid) constructor
+
+**Kind**: global enum  
+**Read only**: true  
 <a name="get"></a>
 
 ## get() ⇒ <code>Array.&lt;Array.&lt;GridPoint&gt;&gt;</code>
