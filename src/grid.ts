@@ -167,7 +167,7 @@ export class Grid {
         this.points.forEach((col, colIndex) =>
             col.forEach((point, rowIndex) => {
                 if (!!condition && !condition(point, colIndex, rowIndex)) return;
-                func(point);
+                func(point, colIndex, rowIndex);
             }),
         );
         return this;
