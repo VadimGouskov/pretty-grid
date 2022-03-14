@@ -134,6 +134,9 @@ If you have a suggestion about the docs, API, tutorials or somethıng else, plea
 
 ## TODO
 
--   3D Grid
 -   Global Grid origin modes
+-   push/pop current state of the grid
+-   rotate method
+-   transform method: (supply your own function to apply transormations to the GridPoints)
+-   3D Grid
 -   ...
