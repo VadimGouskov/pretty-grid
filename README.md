@@ -1,5 +1,7 @@
 # Pretty Grid
 
+![intro](assets/banner.png)
+
 ## Table of contents
 
 -   [Introduction](#introduction)

@@ -1,10 +1,10 @@
-import { Grid, evenRows, and, evenCols, oddRows, oddCols, odd } from 'pretty-grid';
+import { Grid, evenRows, and, evenCols, oddRows, oddCols, odd, GridShape } from 'pretty-grid';
 import p5 from 'p5';
 
 const s = (p: p5) => {
-    const CANVAS_WIDTH = 500;
-    const CANVAS_HEIGHT = 500;
-    let exportName = "simple";
+    const CANVAS_WIDTH = 250;
+    const CANVAS_HEIGHT = 250;
+    let exportName = 'simple';
 
     const grid = new Grid(5, 8, CANVAS_WIDTH, CANVAS_HEIGHT);
 
@@ -18,7 +18,6 @@ const s = (p: p5) => {
         p.background(32);
         p.ellipseMode(p.CENTER);
 
-
         // Drawing
 
         // Translating
@@ -28,7 +27,7 @@ const s = (p: p5) => {
         grid.translate(10, 20);
         grid.draw(point => orangeCircle(point.x, point.y));
         */
-        // Chaining 
+        // Chaining
 
         // Conditions
         /*
@@ -55,6 +54,7 @@ const s = (p: p5) => {
         */
 
         // vanilla js
+        /*
         exportName = "vanillajs"
         // initialize grid
         const COLS_AMOUNT = 5;
@@ -75,37 +75,44 @@ const s = (p: p5) => {
                 };
             }
         }
+        */
 
-        // p.saveCanvas(exportName, "png");
+        // Ellipse grid
 
+        exportName = 'ellipse-grid';
+
+        const ellipseGrid = new Grid(16, 8, CANVAS_WIDTH, CANVAS_WIDTH, GridShape.ELLIPSE);
+        ellipseGrid.translate(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+        ellipseGrid.draw((point) => whiteDot(point.x, point.y));
+
+        p.saveCanvas(exportName, 'png');
     };
 
     const orangeDot = (x: number, y: number) => {
-        drawDot(x, y, "#ff6700");
-    }
+        drawDot(x, y, '#ff6700');
+    };
 
     const blueDot = (x: number, y: number) => {
-        drawDot(x, y, "#0000ff");
-    }
+        drawDot(x, y, '#0000ff');
+    };
 
     const whiteDot = (x: number, y: number) => {
-        drawDot(x, y, "#fff");
-    }
+        drawDot(x, y, '#fff');
+    };
 
     const drawDot = (x: number, y: number, color: string) => {
         p.fill(color);
-        p.circle(x, y, 10)
-    }
+        p.circle(x, y, 5);
+    };
 
     const orangeCircle = (x: number, y: number) => {
         p.push();
         p.noFill();
-        p.stroke("#ff6700");
-        p.strokeWeight(3)
-        p.circle(x, y, 20)
-        p.pop()
-
-    }
+        p.stroke('#ff6700');
+        p.strokeWeight(3);
+        p.circle(x, y, 20);
+        p.pop();
+    };
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
