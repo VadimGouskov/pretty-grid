@@ -121,6 +121,7 @@ The full documentation can be found [here](https://github.com/VadimGouskov/prett
 -   [Operators: NOT](https://editor.p5js.org/VadimGouskov/sketches/Y8WipTN7U)
 -   [Operators: AND OR NOT Combined](https://editor.p5js.org/VadimGouskov/sketches/owm9JDEHe)
 -   [Custom Operators](https://editor.p5js.org/VadimGouskov/sketches/mHWaqUVFP)
+-   [Shapes: Ellipse Grids](https://editor.p5js.org/VadimGouskov/sketches/gDVloSS0J)
 -   [README example](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2)
 
 > These editable code examples are created using p5.js playground. Feel free to use `pretty-grid` in combination with other js (drawing) libraries. The full p5.js playground collection can be found [here](https://editor.p5js.org/VadimGouskov/collections/1uEQLKloQ).
@@ -135,6 +136,9 @@ If you have a suggestion about the docs, API, tutorials or somethıng else, plea
 
 ## TODO
 
--   3D Grid
 -   Global Grid origin modes
+-   push/pop current state of the grid
+-   rotate method
+-   transform method: (supply your own function to apply transormations to the GridPoints)
+-   3D Grid
 -   ...
