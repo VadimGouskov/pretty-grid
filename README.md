@@ -48,7 +48,7 @@ Using `pretty-grid`, this simplifies to:
 const grid = new Grid(COLS_AMOUNT, ROWS_AMOUNT, GRID_WIDTH, GRID_HEIGHT);
 ```
 
-Using a couple of `pretty-grid`'s helper methods you can already create a complex looking grid layout:
+Using a couple of `pretty-grid`'s helper methods you can already create a complex looking grid layout in only a few lines of code:
 
 ```js
 // Grid (cols, rows, width, height)
