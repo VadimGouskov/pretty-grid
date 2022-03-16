@@ -1,6 +1,6 @@
 # Pretty Grid
 
-![intro](assets/banner.png)
+![intro](assets/banner2.png)
 
 ## Table of contents
 
