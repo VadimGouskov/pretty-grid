@@ -51,6 +51,7 @@ const grid = new Grid(COLS_AMOUNT, ROWS_AMOUNT, GRID_WIDTH, GRID_HEIGHT);
 Using a couple of `pretty-grid`'s helper methods you can already create a complex looking grid layout in only a few lines of code:
 
 ```js
+import {Grid, and, oddRows, oddCols, evenRows} from 'pretty-grid'
 // Grid (cols, rows, width, height)
 const grid = new Grid(20, 10, 500, 500);
 grid.draw(point => whiteDot(point.x, point.y));
