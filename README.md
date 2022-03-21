@@ -24,7 +24,7 @@ const GRID_WIDTH = 500;
 const GRID_HEIGHT = 500;
 ```
 
-Using vanilla JavaScript:
+Using vanilla JavaScript, you might write:
 
 ```js
 const COLS_DISTANCE = GRID_WIDTH / (COLS_AMOUNT - 1);
