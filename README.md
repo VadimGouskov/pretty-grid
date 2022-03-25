@@ -123,6 +123,8 @@ The full documentation can be found [here](https://github.com/VadimGouskov/prett
 -   [Operators: AND OR NOT Combined](https://editor.p5js.org/VadimGouskov/sketches/owm9JDEHe)
 -   [Custom Operators](https://editor.p5js.org/VadimGouskov/sketches/mHWaqUVFP)
 -   [Shapes: Ellipse Grids](https://editor.p5js.org/VadimGouskov/sketches/gDVloSS0J)
+-   [Shape Origins: Rectangle Grid](https://editor.p5js.org/VadimGouskov/sketches/HkOOuzeQz)
+-   [Shape Origins: Ellipse Grid](https://editor.p5js.org/VadimGouskov/sketches/ROnn9dDoE)
 -   [README example](https://editor.p5js.org/VadimGouskov/sketches/6CiLATPQ2)
 
 > These editable code examples are created using p5.js playground. Feel free to use `pretty-grid` in combination with other js (drawing) libraries. The full p5.js playground collection can be found [here](https://editor.p5js.org/VadimGouskov/collections/1uEQLKloQ).
