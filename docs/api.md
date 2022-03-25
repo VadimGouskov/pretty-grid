@@ -36,7 +36,11 @@ Provide a drawing function</p>
 <dd><p>Creates a deep copy of the current grid object</p>
 </dd>
 <dt><a href="#rectangleShapeOrigin">rectangleShapeOrigin(origin)</a></dt>
-<dd></dd>
+<dd><p>Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.</p>
+</dd>
+<dt><a href="#ellipseShapeOrigin">ellipseShapeOrigin(originthe)</a></dt>
+<dd><p>Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.</p>
+</dd>
 </dl>
 
 <a name="GridPoint"></a>
@@ -166,9 +170,22 @@ Creates a deep copy of the current grid object
 <a name="rectangleShapeOrigin"></a>
 
 ## rectangleShapeOrigin(origin)
+Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.
+
 **Kind**: global function  
 
-| Param |
-| --- |
-| origin | 
+| Param | Type | Description |
+| --- | --- | --- |
+| origin | [<code>ShapeOrigin</code>](#ShapeOrigin) | The new origin for rectangle grids |
+
+<a name="ellipseShapeOrigin"></a>
+
+## ellipseShapeOrigin(originthe)
+Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| originthe | [<code>ShapeOrigin</code>](#ShapeOrigin) | The new origin for ellipse grids |
 
