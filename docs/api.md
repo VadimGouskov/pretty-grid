@@ -35,6 +35,12 @@ Provide a drawing function</p>
 <dt><a href="#copy">copy()</a> ⇒ <code><a href="#Grid">Grid</a></code></dt>
 <dd><p>Creates a deep copy of the current grid object</p>
 </dd>
+<dt><a href="#rectangleShapeOrigin">rectangleShapeOrigin(origin)</a></dt>
+<dd><p>Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.</p>
+</dd>
+<dt><a href="#ellipseShapeOrigin">ellipseShapeOrigin(originthe)</a></dt>
+<dd><p>Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.</p>
+</dd>
 </dl>
 
 <a name="GridPoint"></a>
@@ -82,6 +88,14 @@ The main Grid class containing all a two dimensional array of GridPoints and met
 ## GridShape : <code>enum</code>
 Enum used to determine the grid shape in the [Grid](#Grid) constructor.
 Values: RECTANGLE or ELLIPSE.
+
+**Kind**: global enum  
+**Read only**: true  
+<a name="ShapeOrigin"></a>
+
+## ShapeOrigin : <code>enum</code>
+Enum used to determine the origin grids are initialized from
+Values: CORNER or CENTER.
 
 **Kind**: global enum  
 **Read only**: true  
@@ -153,3 +167,25 @@ Creates a deep copy of the current grid object
 
 **Kind**: global function  
 **Returns**: [<code>Grid</code>](#Grid) - a new instance of Grid of with the same coordinate values as @this Grid  
+<a name="rectangleShapeOrigin"></a>
+
+## rectangleShapeOrigin(origin)
+Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| origin | [<code>ShapeOrigin</code>](#ShapeOrigin) | The new origin for rectangle grids |
+
+<a name="ellipseShapeOrigin"></a>
+
+## ellipseShapeOrigin(originthe)
+Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| originthe | [<code>ShapeOrigin</code>](#ShapeOrigin) | The new origin for ellipse grids |
+

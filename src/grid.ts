@@ -1,4 +1,5 @@
 import { Condition } from './conditions';
+import { shapeOrigins, ShapeOrigin } from './globals';
 
 export type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 
@@ -74,10 +75,18 @@ export class Grid {
         const stepCols = width / (cols - 1);
         const stepRows = height / (rows - 1);
 
+        // Defaults to Corner origin
+        let originOffsetX = 0,
+            originOffsetY = 0;
+        if (shapeOrigins.Rectangle === ShapeOrigin.CENTER) {
+            originOffsetX = -width / 2;
+            originOffsetY = -height / 2;
+        }
+
         for (let i = 0; i < cols; i++) {
             this.points[i] = [];
             for (let j = 0; j < rows; j++) {
-                this.points[i][j] = new GridPoint(i * stepCols, j * stepRows);
+                this.points[i][j] = new GridPoint(i * stepCols + originOffsetX, j * stepRows + originOffsetY);
             }
         }
     }
@@ -86,6 +95,14 @@ export class Grid {
         const heightStep = height / rows;
         const widthStep = width / rows;
         const radialStep = (Math.PI * 2) / cols;
+
+        // Defaults to Center origin
+        let originOffsetX = 0,
+            originOffsetY = 0;
+        if (shapeOrigins.Ellipse === ShapeOrigin.CORNER) {
+            originOffsetX = width / 2;
+            originOffsetY = height / 2;
+        }
 
         for (let col = 0; col < cols; col++) {
             this.points[col] = [];
@@ -98,7 +115,7 @@ export class Grid {
                 let pointX = (ringWidth / 2) * Math.cos(theta);
                 let pointY = (ringHeight / 2) * Math.sin(theta);
 
-                this.points[col][row - 1] = new GridPoint(pointX, pointY);
+                this.points[col][row - 1] = new GridPoint(pointX + originOffsetX, pointY + originOffsetY);
             }
         }
     }
