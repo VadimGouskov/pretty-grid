@@ -38,7 +38,7 @@ Provide a drawing function</p>
 <dt><a href="#rectangleShapeOrigin">rectangleShapeOrigin(origin)</a></dt>
 <dd><p>Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.</p>
 </dd>
-<dt><a href="#ellipseShapeOrigin">ellipseShapeOrigin(originthe)</a></dt>
+<dt><a href="#ellipseShapeOrigin">ellipseShapeOrigin(origin)</a></dt>
 <dd><p>Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.</p>
 </dd>
 </dl>
@@ -180,12 +180,12 @@ Sets the origin mode for all rectangular grids that are initialized after callin
 
 <a name="ellipseShapeOrigin"></a>
 
-## ellipseShapeOrigin(originthe)
+## ellipseShapeOrigin(origin)
 Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| originthe | [<code>ShapeOrigin</code>](#ShapeOrigin) | The new origin for ellipse grids |
+| origin | [<code>ShapeOrigin</code>](#ShapeOrigin) | the The new origin for ellipse grids |
 

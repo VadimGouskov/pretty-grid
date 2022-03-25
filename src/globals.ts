@@ -19,7 +19,7 @@ export const rectangleShapeOrigin = (origin: ShapeOrigin) => {
 
 /**
  * Sets the origin mode for all ellipse grids that are initialized after calling this function. Default is CENTER.
- * @param {ShapeOrigin} originthe The new origin for ellipse grids
+ * @param {ShapeOrigin} origin the The new origin for ellipse grids
  */
 export const ellipseShapeOrigin = (origin: ShapeOrigin) => {
     shapeOrigins.Ellipse = origin;
