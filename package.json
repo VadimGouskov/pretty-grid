@@ -21,10 +21,19 @@
     "build": "webpack",
     "test": "jest",
     "publish:safe": "npm run test && npm publish",
-    "docs": "node docs/generate.js"
+    "api-docs": "node api-docs/generate.js"
   },
   "keywords": [
-    "grid"
+    "grid",
+    "create",
+    "canvas",
+    "pgrid",
+    "prettygrid",
+    "typescript",
+    "ts",
+    "shape",
+    "ellipse",
+    "circular"
   ],
   "license": "MIT",
   "devDependencies": {
