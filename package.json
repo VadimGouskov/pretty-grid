@@ -3,7 +3,7 @@
   "version": "0.0.11",
   "description": "Grid creation and manipulation made pretty.",
   "author": "Vadim Gouskov",
-  "homepage": "https://github.com/VadimGouskov/pretty-grid",
+  "homepage": "https://prettygrid.vadimgouskov.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/VadimGouskov/pretty-grid"
