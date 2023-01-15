@@ -43,4 +43,4 @@ A node based example project can be found [here](https://github.com/VadimGouskov
 <br/>
 <br/>
 
-Now that you got everything ready, visit the [API reference](https://github.com/VadimGouskov/pretty-grid/wiki/API) or [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/Tutorials) pages to start making Grids!
+Now that you got everything ready, visit the [Examples](examples/prerequisites.md) or [API reference](api/API.md) pages to start making Grids!

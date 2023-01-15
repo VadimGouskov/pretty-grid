@@ -10,7 +10,7 @@ const config = {
   tagline: 'Create and manipulate grids with Javascript',
   url: 'https://pretty-grid.vadimgouskov.com',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 

@@ -45,4 +45,4 @@ grid.translate(10, 20, myConditionCreator(50, true));
 
 ```
 
-> Here the ConditionCreator needs to be executed provided with each optional parameters (here `50` and `true`). The `Condition` returned by the `ConditionCreator` is then passed to the Grid method
+> Here the `ConditionCreator needs` to be executed provided with each optional parameters (here `50` and `true`). The `Condition` returned by the `ConditionCreator` is then passed to the Grid method

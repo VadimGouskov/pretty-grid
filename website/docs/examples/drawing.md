@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Drawing
 
-To draw the points on your grid using your library of choice the `Grid` class implements the [draw](https://github.com/VadimGouskov/pretty-grid/wiki/API#drawfunc-condition--void) method. `Grid.draw` accepts a function in the form of <br/>
+To draw the points on your grid using your library of choice the `Grid` class implements the [draw](../api//API.md#drawfunc-condition-⇒-grid) method. `Grid.draw` accepts a function in the form of <br/>
 
 ```ts
 (point: GridPoint, col?: number, row?: number) => void

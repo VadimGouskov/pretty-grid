@@ -20,7 +20,7 @@ on a 500 x 500 canvas, this will produce following grid:
 
 > The horizontal distance between each point is calculated by `width / (cols - 1)` and the vertical distance by `height / (rows -1)`
 
-You can create grids in different shapes by using the [GridShape enum](API#gridshape) as the optional 5th argument of the `Grid` constructor.
+You can create grids in different shapes by using the [GridShape enum](../api/API.md#gridshape--enum) as the optional 5th argument of the `Grid` constructor.
 
 ```ts
 // new Grid (cols, rows, width, height, shape)
