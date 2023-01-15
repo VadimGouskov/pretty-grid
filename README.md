@@ -2,14 +2,26 @@
 
 ![intro](assets/banner2.png)
 
-## Table of contents
+**Create and manipulate grid using javascript.** 
 
--   [Introduction](#introduction)
--   [Getting started](#getting-started)
--   [Documentation](https://github.com/VadimGouskov/pretty-grid/wiki)
-    -   [API](https://github.com/VadimGouskov/pretty-grid/wiki/API)
-    -   [Tutorials](https://github.com/VadimGouskov/pretty-grid/wiki/tutorials)
--   [Examples](#examples)
+## Documentation
+Setup and documentation at  [the prety-grid docsite](https://prettygrid.vadimgouskov.com) ✨
+ 
+  
+## Quick install
+
+### Browser
+```html
+<script src="https://cdn.jsdelivr.net/npm/pretty-grid"></script>
+```
+
+### Node
+
+```bash
+npm install pretty-grid
+```
+
+
 
 ## Introduction
 
@@ -107,11 +119,8 @@ grid.draw(point => ...));
 
 A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)
 
-<br />
 
-## Docs
-
-The full documentation can be found [here](https://github.com/VadimGouskov/pretty-grid/wiki)
+The full documentation can be found [here](https://prettygrid.vadimgouskov.com) ✨
 
 ## Examples
 
@@ -135,7 +144,6 @@ The goal of `pretty-grid` is to make grid drawing easier for everybody.
 If you have a suggestion about the docs, API, tutorials or somethıng else, please post it in one of the folowing ways:
 
 -   [Open an issue](https://github.com/VadimGouskov/pretty-grid/issues) on GitHub and tag it with the green "Suggestion" label
--   Fill out [this form](https://forms.office.com/r/Pz7nQk2iBA)
 
 ## TODO
 
