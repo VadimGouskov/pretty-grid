@@ -111,3 +111,19 @@ export declare class Grid {
      */
     copy(): Grid;
 }
+declare type GridOptions = {
+    cols: number;
+    rows: number;
+    width: number;
+    height: number;
+    shape?: GridShape;
+};
+/**
+*
+* @func
+* @name createGrid
+* @param {GridOptions} options
+* @returns {Grid}
+*/
+export declare const createGrid: (options: GridOptions) => Grid;
+export {};

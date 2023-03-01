@@ -120,6 +120,7 @@ export class Grid {
         }
     }
 
+
     /**
      * Get all the current points on the grid
      * warning: gets the points array by reference. Changes to individual points will be reflected in the original grid object.
@@ -238,4 +239,35 @@ export class Grid {
         return gridFromSlice;
     }
     */
+}
+
+/**
+ * Options to configure a grid
+ * @typedef GridOptions
+ * @property {number} cols
+ * @property {number} rows
+ * @property {number} width
+ * @property {number} height
+ * @property {GridShape} [shape]
+ */
+
+
+type GridOptionsType = {
+    cols: number;
+    rows: number;
+    width: number;
+    height: number;
+    shape?: GridShape;
+}
+
+/** 
+* Create a grid  
+*
+* @func
+* @name createGrid
+* @param {GridOptions} options
+* @returns {Grid}
+*/
+export const createGrid = (options: GridOptionsType) => {
+    return new Grid(options.cols, options.rows, options.width, options.height, options.shape);
 }
