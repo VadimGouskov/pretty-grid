@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/pretty-grid.ts',
-  devtool: 'inline-source-map',
-  mode:"production",
+  mode: "production",
   module: {
     rules: [
       {
@@ -20,9 +19,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'pretty-grid.js',
     library: {
-        name: 'prettyGrid',
-        type: 'umd',
-      },
+      name: 'prettyGrid',
+      type: 'umd',
+    },
     globalObject: 'this',
   },
 };

@@ -3,3 +3,5 @@ node_modules
 examples/**/dist
 examples/local
 .DS_STORE
+
+pretty-grid-test

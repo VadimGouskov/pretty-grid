@@ -35,6 +35,9 @@ Provide a drawing function</p>
 <dt><a href="#copy">copy()</a> ⇒ <code><a href="#Grid">Grid</a></code></dt>
 <dd><p>Creates a deep copy of the current grid object</p>
 </dd>
+<dt><a href="#createGrid">createGrid(options)</a> ⇒ <code><a href="#Grid">Grid</a></code></dt>
+<dd><p>Create a grid</p>
+</dd>
 <dt><a href="#rectangleShapeOrigin">rectangleShapeOrigin(origin)</a></dt>
 <dd><p>Sets the origin mode for all rectangular grids that are initialized after calling this function. Default is CORNER.</p>
 </dd>
@@ -167,6 +170,17 @@ Creates a deep copy of the current grid object
 
 **Kind**: global function  
 **Returns**: [<code>Grid</code>](#Grid) - a new instance of Grid of with the same coordinate values as @this Grid  
+<a name="createGrid"></a>
+
+## createGrid(options) ⇒ [<code>Grid</code>](#Grid)
+Create a grid
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| options | <code>GridOptions</code> | 
+
 <a name="rectangleShapeOrigin"></a>
 
 ## rectangleShapeOrigin(origin)

@@ -1,6 +1,6 @@
 {
   "name": "pretty-grid",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Grid creation and manipulation made pretty.",
   "author": "Vadim Gouskov",
   "homepage": "https://prettygrid.vadimgouskov.com",
@@ -30,6 +30,8 @@
     "pgrid",
     "prettygrid",
     "typescript",
+    "ts",
+    "javascript",
     "ts",
     "shape",
     "ellipse",

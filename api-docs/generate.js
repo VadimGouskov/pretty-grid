@@ -14,7 +14,7 @@ try {
 const md = jsdoc2md.renderSync({ files: ["api-docs/grid.js", "api-docs/globals.js"], configure: "api-docs/jsdocs.json" });
 
 // Output
-fs.writeFileSync('docs/api.md', md);
+fs.writeFileSync('api-docs/api.md', md);
 
 // Cleanup
 execSync("rm api-docs/grid.js api-docs/conditions.js api-docs/globals.js");
