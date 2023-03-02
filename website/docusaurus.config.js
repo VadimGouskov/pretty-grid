@@ -27,6 +27,8 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [require.resolve('docusaurus-plugin-fathom')],
+
   presets: [
     [
       'classic',
@@ -56,6 +58,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      fathomAnalytics: {
+        siteId: 'QSDUCUQL',
+      },
       navbar: {
         title: 'Pretty Grid',
 
