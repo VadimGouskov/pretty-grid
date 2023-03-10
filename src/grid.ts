@@ -1,7 +1,8 @@
 import { Condition } from './conditions';
-import { shapeOrigins, ShapeOrigin } from './globals';
+import { GridFunction } from './gird.function';
+import { initEllipseGrid, initRectangleGrid } from './grid-init';
+import { GridPoint } from './grid-point';
 
-export type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
 
 /**
  * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor.
@@ -14,23 +15,6 @@ export enum GridShape {
     ELLIPSE = 1,
 }
 
-/**
- * Represent a single point on the grid.
- * @class
- * @name GridPoint
- * @param {number} x the x coordinate of the point
- * @param {number} y the x coordinate of the point
- * @property {number} x the x coordinate of the point
- * @property {number} y the x coordinate of the point
- */
-export class GridPoint {
-    x: number;
-    y: number;
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-    }
-}
 
 /**
  * The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
@@ -64,59 +48,10 @@ export class Grid {
 
         // initialize grid
         if (shape === GridShape.ELLIPSE) {
-            this.initEllipseGrid(cols, rows, width, height);
+            this.points = initEllipseGrid(cols, rows, width, height);
         } else {
             // default to rectangle grid
-            this.initRectangleGrid(cols, rows, width, height);
-        }
-    }
-
-    private initRectangleGrid(cols: number, rows: number, width: number, height: number): void {
-        const stepCols = width / (cols - 1);
-        const stepRows = height / (rows - 1);
-
-        // Defaults to Corner origin
-        let originOffsetX = 0,
-            originOffsetY = 0;
-        if (shapeOrigins.Rectangle === ShapeOrigin.CENTER) {
-            originOffsetX = -width / 2;
-            originOffsetY = -height / 2;
-        }
-
-        for (let i = 0; i < cols; i++) {
-            this.points[i] = [];
-            for (let j = 0; j < rows; j++) {
-                this.points[i][j] = new GridPoint(i * stepCols + originOffsetX, j * stepRows + originOffsetY);
-            }
-        }
-    }
-
-    private initEllipseGrid(cols: number, rows: number, width: number, height: number): void {
-        const heightStep = height / rows;
-        const widthStep = width / rows;
-        const radialStep = (Math.PI * 2) / cols;
-
-        // Defaults to Center origin
-        let originOffsetX = 0,
-            originOffsetY = 0;
-        if (shapeOrigins.Ellipse === ShapeOrigin.CORNER) {
-            originOffsetX = width / 2;
-            originOffsetY = height / 2;
-        }
-
-        for (let col = 0; col < cols; col++) {
-            this.points[col] = [];
-            const theta = col * radialStep;
-
-            for (let row = rows; row >= 1; row--) {
-                const ringWidth = row * widthStep;
-                const ringHeight = row * heightStep;
-
-                let pointX = (ringWidth / 2) * Math.cos(theta);
-                let pointY = (ringHeight / 2) * Math.sin(theta);
-
-                this.points[col][row - 1] = new GridPoint(pointX + originOffsetX, pointY + originOffsetY);
-            }
+            this.points = initRectangleGrid(cols, rows, width, height)
         }
     }
 
@@ -130,7 +65,7 @@ export class Grid {
      * @name get
      * @returns {GridPoint[][]}
      *
-
+     
      */
     get(): GridPoint[][] {
         return this.points;

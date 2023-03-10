@@ -1,5 +1,6 @@
 import { Condition } from './conditions';
-export declare type GridFunction = (point: GridPoint, col?: number, row?: number) => void;
+import { GridFunction } from './gird.function';
+import { GridPoint } from './grid-point';
 /**
  * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor.
  * Values: RECTANGLE or ELLIPSE.
@@ -9,20 +10,6 @@ export declare type GridFunction = (point: GridPoint, col?: number, row?: number
 export declare enum GridShape {
     RECTANGLE = 0,
     ELLIPSE = 1
-}
-/**
- * Represent a single point on the grid.
- * @class
- * @name GridPoint
- * @param {number} x the x coordinate of the point
- * @param {number} y the x coordinate of the point
- * @property {number} x the x coordinate of the point
- * @property {number} y the x coordinate of the point
- */
-export declare class GridPoint {
-    x: number;
-    y: number;
-    constructor(x: number, y: number);
 }
 /**
  * The main Grid class containing all a two dimensional array of GridPoints and methods to manipulate the GridPoints on grid.
@@ -43,8 +30,6 @@ export declare class Grid {
  
      */
     constructor(cols: number, rows: number, width: number, height: number, shape?: GridShape);
-    private initRectangleGrid;
-    private initEllipseGrid;
     /**
      * Get all the current points on the grid
      * warning: gets the points array by reference. Changes to individual points will be reflected in the original grid object.
@@ -54,7 +39,7 @@ export declare class Grid {
      * @name get
      * @returns {GridPoint[][]}
      *
-
+     
      */
     get(): GridPoint[][];
     /**
@@ -111,7 +96,16 @@ export declare class Grid {
      */
     copy(): Grid;
 }
-declare type GridOptions = {
+/**
+ * Options to configure a grid
+ * @typedef GridOptions
+ * @property {number} cols
+ * @property {number} rows
+ * @property {number} width
+ * @property {number} height
+ * @property {GridShape} [shape]
+ */
+declare type GridOptionsType = {
     cols: number;
     rows: number;
     width: number;
@@ -119,11 +113,12 @@ declare type GridOptions = {
     shape?: GridShape;
 };
 /**
+* Create a grid
 *
 * @func
 * @name createGrid
 * @param {GridOptions} options
 * @returns {Grid}
 */
-export declare const createGrid: (options: GridOptions) => Grid;
+export declare const createGrid: (options: GridOptionsType) => Grid;
 export {};

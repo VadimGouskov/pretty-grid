@@ -21,5 +21,6 @@ export declare const ellipseShapeOrigin: (origin: ShapeOrigin) => void;
 export declare type ShapeOrigins = {
     Rectangle: ShapeOrigin;
     Ellipse: ShapeOrigin;
+    Cuboid: ShapeOrigin;
 };
 export declare const shapeOrigins: ShapeOrigins;

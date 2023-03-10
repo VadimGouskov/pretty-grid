@@ -29,9 +29,11 @@ export const ellipseShapeOrigin = (origin: ShapeOrigin) => {
 export type ShapeOrigins = {
     Rectangle: ShapeOrigin;
     Ellipse: ShapeOrigin;
+    Cuboid: ShapeOrigin;
 };
 
 export const shapeOrigins: ShapeOrigins = {
     Rectangle: ShapeOrigin.CORNER,
     Ellipse: ShapeOrigin.CENTER,
+    Cuboid: ShapeOrigin.CORNER,
 };

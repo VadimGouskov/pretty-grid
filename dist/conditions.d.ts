@@ -1,5 +1,5 @@
-import { GridPoint } from './grid';
-export declare type Condition = (point: GridPoint, col?: number, row?: number) => boolean;
+import { GridPoint } from "./grid-point";
+export declare type Condition = (point: GridPoint, col?: number, row?: number, layer?: number) => boolean;
 export declare type ConditionCreator = (...args: any[]) => Condition;
 export declare const all: ConditionCreator;
 export declare const even: ConditionCreator;

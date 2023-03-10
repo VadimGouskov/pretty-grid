@@ -1,6 +1,6 @@
-import { GridPoint } from './grid';
+import { GridPoint } from "./grid-point";
 
-export type Condition = (point: GridPoint, col?: number, row?: number) => boolean;
+export type Condition = (point: GridPoint, col?: number, row?: number, layer?: number) => boolean;
 
 export type ConditionCreator = (...args: any[]) => Condition;
 
