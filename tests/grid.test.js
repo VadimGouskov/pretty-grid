@@ -1,10 +1,11 @@
-const { Grid } = require('../dist/pretty-grid.js');
+const { Grid, createGrid } = require('../dist/pretty-grid.js');
 
 const GRID_ROWS = 5;
 const GRID_COLS = 7;
 const WIDTH = 100;
 const HEIGHT = 100;
-const grid = new Grid(GRID_COLS, GRID_ROWS, WIDTH, HEIGHT);
+const grid = new createGrid({ cols: GRID_COLS, rows: GRID_ROWS, width: WIDTH, height: HEIGHT });
+
 
 test('Check dimensions', () => {
     expect(grid.get().length).toBe(GRID_COLS); // cols

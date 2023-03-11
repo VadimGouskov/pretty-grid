@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/pretty-grid.ts',
-  mode: "production",
+  mode: "development",
   module: {
     rules: [
       {
