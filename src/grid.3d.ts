@@ -23,7 +23,7 @@ type Grid3DOptions = {
 }
 
 export class Grid3D implements Grid3DInterface {
-    private points: Points3D;
+    private points: Points3D = [[[]]];
 
     constructor(options: Grid3DOptions) {
         const { cols, rows, layers, width, height, depth } = options;
