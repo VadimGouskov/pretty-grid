@@ -17,7 +17,7 @@ All `pretty-grid` features can now be accessed from the `prettyGrid` global obje
 
 ```js
 const grid = new prettyGrid.Grid(3, 5, 500, 500);
-grid.draw(point => ...);
+grid.every(point => ...);
 ```
 
 A browser example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/browser-simple-p5)
@@ -36,7 +36,7 @@ How to import features from `pretty-grid`
 import { Grid } from 'pretty-grid';
 
 const grid = new Grid(3, 5, 500, 500);
-grid.draw(point => ...);
+grid.every(point => ...);
 ```
 
 A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)

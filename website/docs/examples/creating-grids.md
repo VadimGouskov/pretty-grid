@@ -4,30 +4,40 @@ sidebar_position: 1
 
 # Creating Grids
 
-To create a grid, initialise a new `Grid` object:
+## Rectangular Grid
+
+To create a grid, use the `createGrid` method. This method accepts an object to specify the amount of columns (`cols`), `rows`, `width` and `height` of the grid.
 
 ```js
-// Grid(cols, rows, width, height)
-const grid = new Grid(5, 8, 500, 500);
+const grid = createGrid({cols: 5, rows: 8, width: 500, height: 500});
 ```
 
-The first two arguments represent the numbers of columns and rows the grid needs to contain. The last two parameters represent the total width and height of the grid.
+Drawing circles for every point on a 500 x 500 canvas, this will produce following output:
 
-on a 500 x 500 canvas, this will produce following grid:
+![rectangular-grid](/creating-grid.png)
 
-![evenRows](/creating-grid.png)
-<br/><br/>
-
-> The horizontal distance between each point is calculated by `width / (cols - 1)` and the vertical distance by `height / (rows -1)`
-
-You can create grids in different shapes by using the [GridShape enum](../api/API.md#gridshape--enum) as the optional 5th argument of the `Grid` constructor.
+## Elliptical Grid
+You can create elliptical grids as well by the setting the `shape` option to `GridShape.ELLIPSE` ([GridShape enum](../api/API.md#gridshape--enum)). 
 
 ```ts
-// new Grid (cols, rows, width, height, shape)
-const ellipseGrid = new Grid(16, 8, 500, 500, GridShape.ELLIPSE);
+const ellipseGrid = createGrid({cols: 16, rows: 8, width: 500, height: 500, shape: GridShape.ELLIPSE});
 ```
 
-![evenRows](/ellipse-grid.png)
-<br/><br/>
+![ellipse-grid](/ellipse-grid.png)
 
-> By default, the origin of a rectangular grid lays in the top left corner. The origin of the elliptical grid lays in the center of the ellipse.
+## 3D Cuboid Grid 
+Create 3D grids using the `createGrid3D` function. Just as with 2D grids, this function accepts an object to specify amount of columns (cols), rows, width and height of the grid. additionally you also pass the amount of `layers` and `depth` on the z-axis.
+```ts
+const grid = createGrid3D({ layers: 8, 
+                            cols: 5, 
+                            rows: 3, 
+                            height: HEIGHT, 
+                            width: WIDTH, 
+                            depth: DEPTH })
+```
+
+![grid3d](/grid3d.png)
+
+
+## Grid Origins
+By default, the origin of a rectangular grid lays in the top left corner. The origin of the elliptical grid lays in the center of the ellipse.

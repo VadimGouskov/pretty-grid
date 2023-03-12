@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Vadim Gouskoc', // Usually your GitHub org/user name.
+  organizationName: 'Vadim Gouskov', // Usually your GitHub org/user name.
   projectName: 'pretty-grid', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
