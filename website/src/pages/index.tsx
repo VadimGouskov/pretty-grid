@@ -4,9 +4,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { ChakraProvider } from '@chakra-ui/react'
+
 
 import styles from './index.module.css';
 import Head from '@docusaurus/Head';
+import { Button, Spinner } from '@chakra-ui/react';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -30,16 +33,19 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <Head>
-        <script defer src="/_vercel/insights/script.js"></script>
-      </Head>
-      <HomepageHeader />
-      {/* <main>
-        <HomepageFeatures />
-      </main> */}
-    </Layout>
+    <ChakraProvider>
+      <Layout
+        title={`Hello from ${siteConfig.title}`}
+        description="Description will go into a meta tag in <head />">
+        <Head>
+          <script defer src="/_vercel/insights/script.js"></script>
+        </Head>
+        <HomepageHeader />
+        <Button colorScheme='blue'>Button</Button>
+
+
+      </Layout>
+    </ChakraProvider >
+
   );
 }
