@@ -3,21 +3,24 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider, Heading, SimpleGrid } from '@chakra-ui/react'
 
 
 import styles from './index.module.css';
 import Head from '@docusaurus/Head';
 import { Button, Spinner } from '@chakra-ui/react';
+import { useHomepageFeatures } from '@site/src/hooks/homepage-features';
+import { Feature } from '@site/src/components/features/feature';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <Box marginBottom={"16px"}>
+          <Heading as={"h1"}>{siteConfig.title}</Heading>
+          <Heading as={"h2"} size={"md"}>{siteConfig.tagline}</Heading>
+        </Box>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -32,6 +35,7 @@ function HomepageHeader() {
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  const features = useHomepageFeatures();
   return (
     <ChakraProvider>
       <Layout
@@ -41,8 +45,11 @@ export default function Home(): JSX.Element {
           <script defer src="/_vercel/insights/script.js"></script>
         </Head>
         <HomepageHeader />
-        <Button colorScheme='blue'>Button</Button>
-
+        <Box width={{ base: '100%', md: '800px' }} margin={"16px auto"}>
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={16}>
+            {features.map(({ img, title }) => < Feature img={img} title={title}></Feature>)}
+          </SimpleGrid>
+        </Box>
 
       </Layout>
     </ChakraProvider >
