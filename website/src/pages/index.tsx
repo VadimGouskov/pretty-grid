@@ -55,7 +55,7 @@ export default function Home(): JSX.Element {
         </Box>
 
         <Stack spacing={"32px"}>
-          {examples.map(({ title, setup, draw }) => <Example title={title} setup={setup} draw={draw} />
+          {examples.map(({ title, setup, draw, code }) => <Example title={title} setup={setup} draw={draw} code={code} />
           )}
         </Stack>
 

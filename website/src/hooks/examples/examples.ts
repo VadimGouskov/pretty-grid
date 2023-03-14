@@ -13,7 +13,13 @@ export const useExamples = (): Example[] => {
     return [{
         title: "How to Create a 2D Grid",
         setup: create2d.setup,
-        draw: create2d.draw
+        draw: create2d.draw,
+        code: `
+            grid = createGrid({ rows: 5, cols: 8, width: GRID_WIDTH, height: GRID_HEIGHT }) 
+            grid.draw(point => {
+                ellipse(point.x, point.y, 20, 20);
+            }
+        `
     },
     {
         title: "How to Create a 2D Grid",

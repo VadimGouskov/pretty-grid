@@ -25,6 +25,7 @@ export const Example: React.FC<Props> = (props) => {
     //     x++;
     // };
 
+
     return (
         <Stack direction={{ base: "column-reverse", md: "row" }}>
             <Box>
@@ -36,7 +37,9 @@ export const Example: React.FC<Props> = (props) => {
                 </Heading>
                 {props.code && (
                     <Code>
-                        {props.code}
+                        <pre >
+                            {props.code}
+                        </pre>
                     </Code>)}
             </Box>
         </Stack>);
