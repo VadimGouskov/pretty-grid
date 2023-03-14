@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Box, ChakraProvider, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Box, ChakraProvider, Heading, SimpleGrid, Stack } from '@chakra-ui/react'
 
 
 import styles from './index.module.css';
@@ -11,6 +11,8 @@ import Head from '@docusaurus/Head';
 import { Button, Spinner } from '@chakra-ui/react';
 import { useHomepageFeatures } from '@site/src/hooks/homepage-features';
 import { Feature } from '@site/src/components/features/feature';
+import { Example } from '../components/examples/example';
+import { useExamples } from '../hooks/examples/examples';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -36,6 +38,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const features = useHomepageFeatures();
+  const examples = useExamples();
   return (
     <ChakraProvider>
       <Layout
@@ -50,6 +53,11 @@ export default function Home(): JSX.Element {
             {features.map(({ img, title }) => < Feature img={img} title={title}></Feature>)}
           </SimpleGrid>
         </Box>
+
+        <Stack spacing={"32px"}>
+          {examples.map(({ title, setup, draw }) => <Example title={title} setup={setup} draw={draw} />
+          )}
+        </Stack>
 
       </Layout>
     </ChakraProvider >
