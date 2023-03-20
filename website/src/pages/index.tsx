@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Alert, Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 
 
 import styles from './index.module.css';
 import Head from '@docusaurus/Head';
 import { Button, Spinner } from '@chakra-ui/react';
-import { useHomepageFeatures } from '@site/src/hooks/homepage-features';
+import { useFeatures } from '@site/src/hooks/features';
 import { Feature } from '@site/src/components/features/feature';
 import { Example } from '../components/examples/example';
 import { useExamples } from '../hooks/examples/examples';
@@ -37,7 +37,7 @@ function HomepageHeader() {
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  const features = useHomepageFeatures();
+  const features = useFeatures();
   const examples = useExamples();
   return (
     <ChakraProvider>
@@ -66,11 +66,26 @@ export default function Home(): JSX.Element {
           </SimpleGrid>
         </Box>
 
+        <Container padding={"32px 0"}>
+          <Heading>Examples</Heading>
+          <Text>
+            Non equidem invideo, miror magis posuere velit aliquet. Qui ipsorum lingua Celtae, nostra Galli appellantur.
 
-        <Stack spacing={"32px"}>
-          {examples.map(({ title, setup, draw, code }) => <Example title={title} setup={setup} draw={draw} code={code} />
-          )}
-        </Stack>
+            <br /><br />
+            <Alert status='info'>
+              Unam incolunt Belgae, aliam Aquitani, tertiam. Nihil hic munitissimus habendi senatus locus, nihil horum? Inmensae subtilitatis, obscuris et malesuada fames.
+              Cras mattis iudicium purus sit amet fermentum. Curabitur est gravida et libero vitae dictum. Ab illo tempore, ab est sed immemorabili. Nec dubitamus multa iter quae et nos invenerat.  </Alert>
+
+          </Text>
+        </Container>
+
+        <Box maxWidth={1200} margin={"64px auto"}>
+
+          <Stack spacing={"64px"}>
+            {examples.map(({ title, setup, draw, code }) => <Example title={title} setup={setup} draw={draw} code={code} />
+            )}
+          </Stack>
+        </Box>
 
       </Layout>
     </ChakraProvider >

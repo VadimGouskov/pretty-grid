@@ -17,16 +17,17 @@ export const Example: React.FC<Props> = (props) => {
 
     const sectionId = props.title.replace(/ /g, "-")
     return (
-        <Stack direction={{ base: "column-reverse", md: "row" }} id={sectionId}>
+        <Stack direction={{ base: "column-reverse", md: "row" }} id={sectionId} >
             <Box>
                 <Sketch setup={props.setup} draw={props.draw} />
             </Box>
-            <Box>
+            <Box width="100%" maxWidth="100%">
                 <Heading>
                     {props.title}
                 </Heading>
+
                 {props.code && (
-                    <SyntaxHighlighter language="typescript" style={stackoverflowDark}>
+                    <SyntaxHighlighter language="typescript" style={stackoverflowDark} customStyle={{ width: "100%", maxWidth: "100%" }} wrapLongLines={false} showLineNumbers={true}>
                         {props.code}
                     </SyntaxHighlighter >)}
             </Box>

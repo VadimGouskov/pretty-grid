@@ -3,7 +3,7 @@ type HomePageFeature = {
     title: string;
     text: string
 }
-export const useHomepageFeatures = (): HomePageFeature[] => {
+export const useFeatures = (): HomePageFeature[] => {
     return [
         { img: "/features/2dgrid-orange.png", title: "Define a grid in 1 line of code", text: "tester" },
         { img: "/features/2d-grid-ellipse-orange.png", title: "Use multiple shapes", text: "tester" },
