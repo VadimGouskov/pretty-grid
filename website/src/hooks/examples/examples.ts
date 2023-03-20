@@ -15,10 +15,10 @@ export const useExamples = (): Example[] => {
         setup: create2d.setup,
         draw: create2d.draw,
         code: `
-            grid = createGrid({ rows: 5, cols: 8, width: GRID_WIDTH, height: GRID_HEIGHT }) 
+            const grid = createGrid({ rows: 5, cols: 8, width: GRID_WIDTH, height: GRID_HEIGHT }); 
             grid.draw(point => {
                 ellipse(point.x, point.y, 20, 20);
-            }
+            };
         `
     },
     {

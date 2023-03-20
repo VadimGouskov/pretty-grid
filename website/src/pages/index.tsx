@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Box, ChakraProvider, Heading, SimpleGrid, Stack } from '@chakra-ui/react'
+import { Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 
 
 import styles from './index.module.css';
@@ -48,11 +48,24 @@ export default function Home(): JSX.Element {
           <script defer src="/_vercel/insights/script.js"></script>
         </Head>
         <HomepageHeader />
-        <Box width={{ base: '100%', md: '800px' }} margin={"16px auto"}>
+
+        <Container padding={"32px 0"}>
+          <Heading>Why Pretty Grid ?</Heading>
+          <Text>
+            Creating 2D or 3D grids involves a lot of boiler plate code.
+            Especially if you want to select or manipulate different areas across your grid.
+            <br /> <br />
+            Pretty-Grid let's you define a 2D or 3D grid in a single line of code.<br />Additionally, Pretty-grid provides
+            numerous helper methods to make complex point selections and transformations across multiple grids a breeze.
+          </Text>
+        </Container>
+
+        <Box width={{ base: '100%', md: '80ch' }} margin={"16px auto"}>
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={16}>
             {features.map(({ img, title }) => < Feature img={img} title={title}></Feature>)}
           </SimpleGrid>
         </Box>
+
 
         <Stack spacing={"32px"}>
           {examples.map(({ title, setup, draw, code }) => <Example title={title} setup={setup} draw={draw} code={code} />

@@ -2,6 +2,8 @@ import React from "react";
 import Sketch from "react-p5";
 import p5Types from "p5"; //Import this for typechecking and intellisense
 import { Box, Code, Heading, Stack, Text } from "@chakra-ui/react";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { stackoverflowDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface Props {
     setup: (p5: p5Types, canvasParentRef: Element) => void
@@ -13,21 +15,9 @@ interface Props {
 
 export const Example: React.FC<Props> = (props) => {
 
-
-    // //See annotations in JS for more information
-    // const setup = (p5: p5Types, canvasParentRef: Element) => {
-    //     p5.createCanvas(500, 500).parent(canvasParentRef);
-    // };
-
-    // const draw = (p5: p5Types) => {
-    //     p5.background(0);
-    //     p5.ellipse(x, y, 70, 70);
-    //     x++;
-    // };
-
-
+    const sectionId = props.title.replace(/ /g, "-")
     return (
-        <Stack direction={{ base: "column-reverse", md: "row" }}>
+        <Stack direction={{ base: "column-reverse", md: "row" }} id={sectionId}>
             <Box>
                 <Sketch setup={props.setup} draw={props.draw} />
             </Box>
@@ -36,11 +26,9 @@ export const Example: React.FC<Props> = (props) => {
                     {props.title}
                 </Heading>
                 {props.code && (
-                    <Code>
-                        <pre >
-                            {props.code}
-                        </pre>
-                    </Code>)}
+                    <SyntaxHighlighter language="typescript" style={stackoverflowDark}>
+                        {props.code}
+                    </SyntaxHighlighter >)}
             </Box>
-        </Stack>);
+        </Stack >);
 };
