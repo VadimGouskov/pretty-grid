@@ -26,8 +26,14 @@ export class Grid3D implements Grid3DInterface {
     private points: Points3D = [[[]]];
 
     constructor(options: Grid3DOptions) {
-        const { cols, rows, layers, width, height, depth } = options;
+        let { cols, rows, layers, width, height, depth } = options;
         const stepLayer = depth / (layers - 1)
+
+        if (layers === 0) {
+            layers = 1;
+            console.warn('Cannot create a grid with 0 layers, layers defaults to 1');
+        }
+
         for (let layer = 0; layer < layers; layer++) {
             this.points[layer] = initRectangleGrid(cols, rows, width, height, stepLayer * layer);
         }

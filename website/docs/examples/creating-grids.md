@@ -39,5 +39,5 @@ const grid = createGrid3D({ layers: 8,
 ![grid3d](/grid3d.png)
 
 
-## Grid Origins
-By default, the origin of a rectangular grid lays in the top left corner. The origin of the elliptical grid lays in the center of the ellipse.
+<!-- ## Grid Origins
+By default, the origin of a rectangular grid lays in the top left corner. The origin of the elliptical grid lays in the center of the ellipse. -->
