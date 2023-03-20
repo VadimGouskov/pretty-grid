@@ -11,7 +11,7 @@ try {
 }
 
 // Jsdocs to Markdown
-const md = jsdoc2md.renderSync({ files: ["api-docs/grid.js", "api-docs/globals.js"], configure: "api-docs/jsdocs.json" });
+const md = jsdoc2md.renderSync({ files: ["api-docs/grid.js"], configure: "api-docs/jsdocs.json" });
 
 // Output
 fs.writeFileSync('api-docs/api.md', md);

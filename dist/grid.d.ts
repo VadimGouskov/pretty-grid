@@ -70,6 +70,7 @@ export declare class Grid {
     /**
      * Loops over the points in the grid, passing each point to the provided func parameter
      * Provide a drawing function
+     * @deprecated
      * @method
      * @name draw
      * @param {GridFunction} func - a function that handles drawing of each individual point
@@ -77,6 +78,16 @@ export declare class Grid {
      * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
     draw(func: GridFunction, condition?: Condition): Grid;
+    /**
+     * Loops over the points in the grid, passing each point to the provided func parameter
+     * Provide a drawing function
+     * @method
+     * @name every
+     * @param {GridFunction} func - a function that handles drawing of each individual point
+     * @param {Condition} condition - an optional condition for which points to draw
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
+     */
+    every(func: GridFunction, condition?: Condition): Grid;
     /**
      * Translates the entire grid by x en y coordinates
      * @method
@@ -121,4 +132,4 @@ declare type GridOptionsType = {
 * @returns {Grid}
 */
 export declare const createGrid: (options: GridOptionsType) => Grid;
-export {};
+export { };
