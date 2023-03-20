@@ -131,7 +131,7 @@ export class Grid {
      * Loops over the points in the grid, passing each point to the provided func parameter
      * Provide a drawing function
      * @method
-     * @name draw
+     * @name every
      * @param {GridFunction} func - a function that handles drawing of each individual point
      * @param {Condition} condition - an optional condition for which points to draw
      * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
