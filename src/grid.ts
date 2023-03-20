@@ -110,6 +110,7 @@ export class Grid {
     /**
      * Loops over the points in the grid, passing each point to the provided func parameter
      * Provide a drawing function
+     * @deprecated
      * @method
      * @name draw
      * @param {GridFunction} func - a function that handles drawing of each individual point
@@ -117,6 +118,25 @@ export class Grid {
      * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
     draw(func: GridFunction, condition?: Condition): Grid {
+        this.points.forEach((col, colIndex) =>
+            col.forEach((point, rowIndex) => {
+                if (!!condition && !condition(point, colIndex, rowIndex)) return;
+                func(point, colIndex, rowIndex);
+            }),
+        );
+        return this;
+    }
+
+    /**
+     * Loops over the points in the grid, passing each point to the provided func parameter
+     * Provide a drawing function
+     * @method
+     * @name draw
+     * @param {GridFunction} func - a function that handles drawing of each individual point
+     * @param {Condition} condition - an optional condition for which points to draw
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
+     */
+    every(func: GridFunction, condition?: Condition): Grid {
         this.points.forEach((col, colIndex) =>
             col.forEach((point, rowIndex) => {
                 if (!!condition && !condition(point, colIndex, rowIndex)) return;

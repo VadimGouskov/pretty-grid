@@ -66,10 +66,10 @@ Using a couple of `pretty-grid`'s helper methods you can already create a comple
 import {Grid, and, oddRows, oddCols, evenRows} from 'pretty-grid'
 // Grid (cols, rows, width, height)
 const grid = new Grid(20, 10, 500, 500);
-grid.draw(point => whiteDot(point.x, point.y));
-grid.draw(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
+grid.every(point => whiteDot(point.x, point.y));
+grid.every(point => orangeCircle(point.x, point.y), and(oddRows(), oddCols()));
 grid.translate(10,10)
-    .draw(point => blueDot(point.x, point.y), evenRows());
+    .every(point => blueDot(point.x, point.y), evenRows());
 ...
 ```
 
@@ -95,7 +95,7 @@ All `pretty-grid` features can now be accessed from the `prettyGrid` global obje
 
 ```js
 const grid = new prettyGrid.Grid(3, 5, 500, 500);
-grid.draw(point => ...));
+grid.every(point => ...));
 ```
 
 A browser example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/browser-simple-p5)
@@ -114,7 +114,7 @@ import features from `pretty-grid`
 import { Grid } from 'pretty-grid';
 
 const grid = new Grid(3, 5, 500, 500);
-grid.draw(point => ...));
+grid.every(point => ...));
 ```
 
 A node based example project can be found [here](https://github.com/VadimGouskov/pretty-grid/tree/main/examples/node-typescript-p5)

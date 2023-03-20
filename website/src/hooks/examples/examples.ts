@@ -19,7 +19,7 @@ export const useExamples = (): Example[] => {
  import { createGrid } from "pretty-grid";
 
  const grid = createGrid({ rows: 5, cols: 8, width: GRID_WIDTH, height: GRID_HEIGHT }); 
- grid.draw(point => {
+ grid.every(point => {
     circle(point.x, point.y, 20);
  };`
     },
@@ -34,7 +34,7 @@ export const useExamples = (): Example[] => {
     width: GRID_WIDTH, height: GRID_HEIGHT, 
     shape: GridShape.ELLIPSE })
 
- grid.draw((point, _, row) => {
+ grid.every((point, _, row) => {
     circle(point.x, point.y, (row + 1) * 5);
  })`
     }
