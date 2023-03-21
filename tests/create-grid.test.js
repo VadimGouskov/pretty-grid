@@ -17,9 +17,9 @@ test("Grid intervals", () => {
 })
 
 test("columns length", () => {
-    expect(grid.get().length).toBe(GRID_COLS);
+    expect(grid.getPoints().length).toBe(GRID_COLS);
 })
 
 test("row length", () => {
-    expect(grid.get()[0].length).toBe(GRID_ROWS);
+    expect(grid.getPoints()[0].length).toBe(GRID_ROWS);
 })

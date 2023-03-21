@@ -36,12 +36,12 @@ export declare class Grid {
      * To get a deep copy use grid.copy(). eg. grid.copy.get()
      *
      * @method
-     * @name get
+     * @name getPoints
      * @returns {GridPoint[][]}
      *
      
      */
-    get(): GridPoint[][];
+    getPoints(): GridPoint[][];
     /**
      * Replaces all the current points on the grid
      * <b> warning: sets a reference to the provided points. Changes in made by this grid object to the points will be reflected in the provided points array. </b>
@@ -132,4 +132,4 @@ declare type GridOptionsType = {
 * @returns {Grid}
 */
 export declare const createGrid: (options: GridOptionsType) => Grid;
-export { };
+export {};

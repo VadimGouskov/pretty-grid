@@ -11,9 +11,9 @@ const grid = new createGrid3D({ cols: COLS, rows: ROWS, layers: LAYERS, width: W
 
 
 test('Check dimensions', () => {
-    expect(grid.get().length).toBe(LAYERS); // cols
-    expect(grid.get()[0].length).toBe(COLS); // rows
-    expect(grid.get()[0][0].length).toBe(ROWS); // rows
+    expect(grid.getPoints().length).toBe(LAYERS); // cols
+    expect(grid.getPoints()[0].length).toBe(COLS); // rows
+    expect(grid.getPoints()[0][0].length).toBe(ROWS); // rows
 })
 
 test("test translations", () => {

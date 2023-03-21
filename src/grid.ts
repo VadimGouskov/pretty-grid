@@ -62,13 +62,13 @@ export class Grid {
      * To get a deep copy use grid.copy(). eg. grid.copy.get()
      * 
      * @method
-     * @name get
+     * @name getPoints
      * @returns {GridPoint[][]}
      *
      
      */
-    get(): GridPoint[][] {
-        return this.points;
+    getPoints(): GridPoint[][] {
+        return [...this.points];
     }
 
     /**

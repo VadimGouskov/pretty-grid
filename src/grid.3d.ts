@@ -6,7 +6,7 @@ import { GridPoint } from "./grid-point";
 type Points3D = GridPoint[][][];
 
 interface Grid3DInterface {
-    get: () => Points3D;
+    getPoints: () => Points3D;
     getPoint: (col: number, row: number, layer: number) => GridPoint;
     setPoint: (col: number, row: number, layer: number, point: GridPoint) => void
     every: (func: GridFunction, condition?: Condition) => Grid3D;
@@ -39,8 +39,8 @@ export class Grid3D implements Grid3DInterface {
         }
     }
 
-    get() {
-        return this.points;
+    getPoints() {
+        return [...this.points];
     }
 
     getPoint(col: number, row: number, layer: number) {

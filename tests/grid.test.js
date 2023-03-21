@@ -8,8 +8,8 @@ const grid = new createGrid({ cols: GRID_COLS, rows: GRID_ROWS, width: WIDTH, he
 
 
 test('Check dimensions', () => {
-    expect(grid.get().length).toBe(GRID_COLS); // cols
-    expect(grid.get()[0].length).toBe(GRID_ROWS); // rows
+    expect(grid.getPoints().length).toBe(GRID_COLS); // cols
+    expect(grid.getPoints()[0].length).toBe(GRID_ROWS); // rows
 })
 
 test('Check interval', () => {
