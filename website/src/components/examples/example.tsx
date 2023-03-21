@@ -4,6 +4,7 @@ import p5Types from "p5"; //Import this for typechecking and intellisense
 import { Box, Code, Heading, Stack, Text } from "@chakra-ui/react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { stackoverflowDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 interface Props {
     setup: (p5: p5Types, canvasParentRef: Element) => void
@@ -19,7 +20,9 @@ export const Example: React.FC<Props> = (props) => {
     return (
         <Stack direction={{ base: "column-reverse", md: "row" }} id={sectionId} >
             <Box>
-                <Sketch setup={props.setup} draw={props.draw} />
+                {/* <BrowserOnly>
+                    {() => <Sketch setup={props.setup} draw={props.draw} />}
+                </BrowserOnly> */}
             </Box>
             <Box width="100%" maxWidth="100%">
                 <Heading>

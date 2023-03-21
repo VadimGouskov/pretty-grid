@@ -13,6 +13,7 @@ import { useFeatures } from '@site/src/hooks/features';
 import { Feature } from '@site/src/components/features/feature';
 import { Example } from '../components/examples/example';
 import { useExamples } from '../hooks/examples/examples';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -80,7 +81,6 @@ export default function Home(): JSX.Element {
         </Container>
 
         <Box maxWidth={1200} margin={"64px auto"}>
-
           <Stack spacing={"64px"}>
             {examples.map(({ title, setup, draw, code }) => <Example title={title} setup={setup} draw={draw} code={code} />
             )}
