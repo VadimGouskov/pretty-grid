@@ -23,13 +23,13 @@ function HomepageHeader() {
           <Heading as={"h1"}>{siteConfig.title}</Heading>
           <Heading as={"h2"} size={"md"}>{siteConfig.tagline}</Heading>
         </Box>
-        <div className={styles.buttons}>
+        <Box>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Get Started
+            Documentation
           </Link>
-        </div>
+        </Box>
       </div>
     </header>
   );
@@ -66,7 +66,7 @@ export default function Home(): JSX.Element {
           </SimpleGrid>
         </Box>
 
-        <Container padding={"32px 0"}>
+        <Container padding={"32px 0"} id="examples">
           <Heading>Examples</Heading>
           <Text>
             Non equidem invideo, miror magis posuere velit aliquet. Qui ipsorum lingua Celtae, nostra Galli appellantur.
