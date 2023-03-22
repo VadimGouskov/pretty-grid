@@ -11,14 +11,14 @@ const setup = (p5: p5Types, canvasParentRef: Element) => {
 
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     grid = createGrid({ rows: 4, cols: 15, width: GRID_WIDTH, height: GRID_HEIGHT, shape: GridShape.ELLIPSE })
+    p5.noLoop();
 };
 
 const draw = (p5: p5Types) => {
     p5.background(0);
     p5.translate(canvasWidth / 2, canvasHeight / 2)
-    ellipseShapeOrigin(ShapeOrigin.CENTER)
 
-    grid.draw((point, _, row) => {
+    grid.every((point, _, row) => {
         p5.circle(point.x, point.y, (row + 1) * 5);
     })
 
