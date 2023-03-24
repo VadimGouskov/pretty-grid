@@ -1,4 +1,4 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import * as React from "react";
 
 type Props = {
@@ -9,8 +9,10 @@ type Props = {
 
 export const Feature: React.FC<Props> = (props) => {
     return <Stack spacing={"16px"}>
-        <img style={{ width: "100%" }} src={props.img}></img>
-        <Heading as={"h2"} size="sm">{props.title}</Heading>
+        <Box backgroundColor={"#fff"} padding={"16px 0"} borderRadius="5%">
+            <img style={{ maxWidth: "100%", height: "200px", margin: "0 auto" }} src={props.img}></img>
+        </Box>
+        <Heading as={"h2"} size="sm" textAlign="center">{props.title}</Heading>
         <Text>{props.text}</Text>
     </Stack>
 }

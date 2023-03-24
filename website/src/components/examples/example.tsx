@@ -21,7 +21,7 @@ export const Example: React.FC<Props> = (props) => {
 
     return (
         <Stack direction={{ base: "column-reverse", md: "row" }} id={sectionId} >
-            <Box paddingTop={"2.5rem"}>
+            <Box marginTop={"2.5rem"} borderRadius="10px"  >
                 <BrowserOnly fallback={<></>}>
                     {() => {
                         const Sketch = require('react-p5');

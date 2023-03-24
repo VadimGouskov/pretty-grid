@@ -2,6 +2,7 @@ import p5Types from "p5";
 import { create2d } from "./sketches/create-2d";
 import { create3d } from "./sketches/create-3d";
 import { createEllipse } from "./sketches/create-ellipse";
+import { drawEvenOdd } from "./sketches/draw-odd-even";
 
 type Example = {
     setup: (p5: p5Types, canvasParentRef: Element) => void
@@ -46,9 +47,31 @@ export const useExamples = (): Example[] => {
         setup: create3d.setup,
         draw: create3d.draw,
         code: ` /* Creating and drawing a 3D */ 
+import { createGrid3D } from "pretty-grid";
+
 grid = createGrid3D({   rows: 3, cols: 5, layers: 8, 
                         width: 400, height: 400, depth: 400 
                     })
+`
+    },
+    {
+        title: "How to draw all even/odd points on a Grid ",
+        setup: drawEvenOdd.setup,
+        draw: drawEvenOdd.draw,
+        code: ` /* Creating and drawing a 3D */ 
+import { createGrid3D, even, odd } from "pretty-grid";
+
+const grid = createGrid({   rows: 8, cols: 8, 
+                            width: 400, height: 400 
+                        }); 
+
+grid.every(point => {
+    whiteCircle(point.x, point.y);
+}, even())
+
+grid.every(point => {
+    orangeCircle(point.x, point.y);
+}, odd())
 `
     }
     ]
