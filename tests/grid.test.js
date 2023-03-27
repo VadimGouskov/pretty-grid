@@ -51,3 +51,21 @@ test('Test the getFlat funcions length', () => {
 
     expect(pointsArray.length).toBe(GRID_COLS * GRID_ROWS);
 })
+
+test('Transform points', () => {
+    const tranformGrid = createGrid({ cols: GRID_COLS, rows: GRID_ROWS, width: WIDTH, height: HEIGHT });
+    tranformGrid.transform((point) => {
+        point.x += 10;
+        return point;
+    })
+
+    expect(tranformGrid.getPoint(0, 0).x).toBe(10);
+})
+
+test('Tranform without point return should not mutate the point', () => {
+    const nonTranfsormedGrid = createGrid({ cols: GRID_COLS, rows: GRID_ROWS, width: WIDTH, height: HEIGHT });
+    nonTranfsormedGrid.transform((point) => {
+        point.x += 10;
+    })
+    expect(nonTranfsormedGrid.getPoint(0, 0).x).toBe(0);
+})

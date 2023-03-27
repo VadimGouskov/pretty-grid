@@ -1,7 +1,7 @@
 import { Condition } from './conditions';
-import { GridFunction } from './gird.function';
+import { GridFunction, TransformFunction } from './grid.function';
 import { initEllipseGrid, initRectangleGrid } from './grid-init';
-import { GridPoint } from './grid-point';
+import { createPoint, GridPoint } from './grid-point';
 
 
 /**
@@ -129,11 +129,10 @@ export class Grid {
 
     /**
      * Loops over the points in the grid, passing each point to the provided func parameter
-     * Provide a drawing function
      * @method
      * @name every
-     * @param {GridFunction} func - a function that handles drawing of each individual point
-     * @param {Condition} condition - an optional condition for which points to draw
+     * @param {GridFunction} func - a function to access each point and row/col indices 
+     * @param {Condition} condition - an optional condition for which points to execute func over
      * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
     every(func: GridFunction, condition?: Condition): Grid {
@@ -143,6 +142,48 @@ export class Grid {
                 func(point, colIndex, rowIndex);
             }),
         );
+        return this;
+    }
+
+    /**
+     * Transforms x, y values of points on the grid using the supplied transform function.
+     * control which points are getting affected by supplying a condition
+     * 
+     * @method
+     * @name transform
+     * @param {TransformFunction} func - a function to transform the point's x, y values. Must return the transformed point.
+     * @param {Condition} condition - an optional condition for which points to be affected
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
+     * 
+     *  * @example
+     * // Translates the grid on the x-axis by 5 and on the y-axis by 8
+     * grid.transform((point) => {
+     *      point.x += 5;    
+     *      point.y += 8; 
+     *      return point; // Make sure to return the transformed point 
+     * })
+     */
+    transform(func: TransformFunction, condition?: Condition): Grid {
+        let warning = false;
+        this.points.forEach((col, colIndex) =>
+            col.forEach((point, rowIndex) => {
+                if (!!condition && !condition(point, colIndex, rowIndex)) return;
+                const transformedPoint = func(createPoint(point.x, point.y), colIndex, rowIndex);
+
+                if (!transformedPoint) {
+                    warning = true;
+                    return;
+                }
+
+                point.x = transformedPoint.x;
+                point.y = transformedPoint.y;
+            }),
+        );
+
+        if (warning) {
+            console.warn("One or more functions did not return a point, make sure your transform function returns a point for it to be updated in the grid")
+        }
+
         return this;
     }
 
@@ -218,10 +259,12 @@ type GridOptionsType = {
 /** 
 * Create a grid  
 *
-* @func
 * @name createGrid
 * @param {GridOptions} options
 * @returns {Grid}
+*
+* @example
+* const grid = createGrid({cols: 3, rows: 5, width 1080, height: 1080});
 */
 export const createGrid = (options: GridOptionsType) => {
     return new Grid(options.cols, options.rows, options.width, options.height, options.shape);

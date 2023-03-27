@@ -19,3 +19,4 @@ export declare class GridPoint implements GridPointInterface {
     z: number;
     constructor(x: number, y: number, z?: number);
 }
+export declare const createPoint: (x: number, y: number, z?: number) => GridPoint;

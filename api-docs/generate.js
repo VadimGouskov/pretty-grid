@@ -5,13 +5,13 @@ const fs = require('fs');
 
 // tsc throws error on linting issues, don't break the script
 try {
-    execSync("tsc src/grid.ts src/globals.ts --outDir api-docs");
+    execSync("tsc src/grid.ts src/grid.3d.ts src/grid-point.ts --outDir api-docs");
 } catch (err) {
 
 }
 
 // Jsdocs to Markdown
-const md = jsdoc2md.renderSync({ files: ["api-docs/grid.js"], configure: "api-docs/jsdocs.json" });
+const md = jsdoc2md.renderSync({ files: ["api-docs/grid.js", "api-docs/grid.3d.js", "api-docs/grid-point.js"], configure: "api-docs/jsdocs.json" });
 
 // Output
 fs.writeFileSync('api-docs/api.md', md);

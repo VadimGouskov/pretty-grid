@@ -1,5 +1,5 @@
 import { Condition } from './conditions';
-import { GridFunction } from './gird.function';
+import { GridFunction, TransformFunction } from './gird.function';
 import { GridPoint } from './grid-point';
 /**
  * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor.
@@ -80,14 +80,32 @@ export declare class Grid {
     draw(func: GridFunction, condition?: Condition): Grid;
     /**
      * Loops over the points in the grid, passing each point to the provided func parameter
-     * Provide a drawing function
      * @method
      * @name every
-     * @param {GridFunction} func - a function that handles drawing of each individual point
-     * @param {Condition} condition - an optional condition for which points to draw
+     * @param {GridFunction} func - a function to access each point and row/col indices
+     * @param {Condition} condition - an optional condition for which points to execute func over
      * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
      */
     every(func: GridFunction, condition?: Condition): Grid;
+    /**
+     * Transforms x, y values of points on the grid using the supplied transform function.
+     * control which points are getting affected by supplying a condition
+     *
+     * @method
+     * @name transform
+     * @param {TransformFunction} func - a function to transform the point's x, y values. Must return the transformed point.
+     * @param {Condition} condition - an optional condition for which points to be affected
+     * @returns { Grid } returns @this Grid Object. Used for chaining Grid methods
+     *
+     *  * @example
+     * // Translates the grid on the x-axis by 5 and on the y-axis by 8
+     * grid.transform((point) => {
+     *      point.x += 5;
+     *      point.y += 8;
+     *      return point; // Make sure to return the transformed point
+     * })
+     */
+    transform(func: TransformFunction, condition?: Condition): Grid;
     /**
      * Translates the entire grid by x en y coordinates
      * @method
