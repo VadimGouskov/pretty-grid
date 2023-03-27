@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Conditions
+# Use Conditions
 
 ## What are Conditions
 Some of `pretty-grid`'s `Grid` methods accept an optional [Condition](https://github.com/VadimGouskov/pretty-grid/blob/02c94cb0187fa8ef08ac96849c9edb3ecb4f0b38/src/conditions.ts#L3) to limit the `GridPoints` that that method affects. 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Iterating
+# Iterate
 
 ## Using the `every` method
 

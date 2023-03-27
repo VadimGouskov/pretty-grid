@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Creating Grids
+# Create Grids
 
 ## Rectangular Grid
 
