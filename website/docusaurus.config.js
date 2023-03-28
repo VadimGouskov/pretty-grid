@@ -75,17 +75,13 @@ const config = {
             href: 'https://github.com/VadimGouskov/pretty-grid',
             label: 'GitHub',
             position: 'right',
+            external: true
           },
-          {
-            href: 'https://editor.p5js.org/VadimGouskov/collections/1uEQLKloQ',
-            label: 'p5js Examples',
-            position: 'right',
-          },
-
           {
             href: 'https://vadimgouskov.com',
             label: 'Author',
             position: 'right',
+            external: true
           },
         ],
       },
