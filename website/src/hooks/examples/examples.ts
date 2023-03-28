@@ -55,6 +55,26 @@ grid = createGrid3D({   rows: 3, cols: 5, layers: 8,
                     })
 `
     },
+
+    {
+        title: "How to transform points on a Grid ",
+        setup: transform.setup,
+        draw: transform.draw,
+        code: ` /* Creating and Transforming a 2D grid */ 
+import { createGrid } from "pretty-grid";
+
+const grid = createGrid({   rows: 15, cols: 15, 
+                            width: 400, height: 400 
+                        }); 
+
+const transformSineWave = (point) => {
+    point.x += Math.sin(point.y * 0.015) * 20;
+    return point;
+}
+
+grid.transform(transformSineWave)
+`
+    },
     {
         title: "How to draw all even/odd points on a Grid ",
         setup: drawEvenOdd.setup,
@@ -75,24 +95,5 @@ grid.every(point => {
 }, odd())
 `
     },
-    {
-        title: "How to transform points on a Grid ",
-        setup: transform.setup,
-        draw: transform.draw,
-        code: ` /* Creating and Transforming a 2D grid */ 
-import { createGrid } from "pretty-grid";
-
-const grid = createGrid({   rows: 15, cols: 15, 
-                            width: 400, height: 400 
-                        }); 
-
-const transformSineWave = (point) => {
-    point.x += Math.sin(point.y * 0.015) * 20;
-    return point;
-}
-
-grid.transform(transformSineWave)
-`
-    }
     ]
 }
