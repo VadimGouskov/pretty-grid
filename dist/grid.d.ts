@@ -1,5 +1,5 @@
 import { Condition } from './conditions';
-import { GridFunction, TransformFunction } from './gird.function';
+import { GridFunction, TransformFunction } from './grid.function';
 import { GridPoint } from './grid-point';
 /**
  * Enum used to determine the grid shape in the [Grid]{@link #Grid} constructor.
@@ -144,10 +144,12 @@ declare type GridOptionsType = {
 /**
 * Create a grid
 *
-* @func
 * @name createGrid
 * @param {GridOptions} options
 * @returns {Grid}
+*
+* @example
+* const grid = createGrid({cols: 3, rows: 5, width 1080, height: 1080});
 */
 export declare const createGrid: (options: GridOptionsType) => Grid;
 export {};

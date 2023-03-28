@@ -1,9 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import { Alert, Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
 
 
 import styles from './index.module.css';
@@ -74,8 +74,10 @@ export default function Home(): JSX.Element {
 
             <br /><br />
             <Alert status='info'>
-              Unam incolunt Belgae, aliam Aquitani, tertiam. Nihil hic munitissimus habendi senatus locus, nihil horum? Inmensae subtilitatis, obscuris et malesuada fames.
-              Cras mattis iudicium purus sit amet fermentum. Curabitur est gravida et libero vitae dictum. Ab illo tempore, ab est sed immemorabili. Nec dubitamus multa iter quae et nos invenerat.  </Alert>
+              <Box>
+                The examples below use the powerful <strong><Link display={"inline"} padding={0} margin={0} href='https://p5js.org/'>p5.js library</Link > </strong> to draw to the html canvas. For brevity, the examples include the <code>pretty-grid</code> code only .
+              </Box>
+            </Alert>
 
           </Text>
         </Container>

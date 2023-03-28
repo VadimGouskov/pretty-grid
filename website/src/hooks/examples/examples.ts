@@ -3,6 +3,7 @@ import { create2d } from "./sketches/create-2d";
 import { create3d } from "./sketches/create-3d";
 import { createEllipse } from "./sketches/create-ellipse";
 import { drawEvenOdd } from "./sketches/draw-odd-even";
+import { transform } from "./sketches/transform";
 
 type Example = {
     setup: (p5: p5Types, canvasParentRef: Element) => void
@@ -46,7 +47,7 @@ export const useExamples = (): Example[] => {
         title: "How to Create a 3D Grid ",
         setup: create3d.setup,
         draw: create3d.draw,
-        code: ` /* Creating and drawing a 3D */ 
+        code: ` /* Creating and drawing a 3D grid*/ 
 import { createGrid3D } from "pretty-grid";
 
 grid = createGrid3D({   rows: 3, cols: 5, layers: 8, 
@@ -58,8 +59,8 @@ grid = createGrid3D({   rows: 3, cols: 5, layers: 8,
         title: "How to draw all even/odd points on a Grid ",
         setup: drawEvenOdd.setup,
         draw: drawEvenOdd.draw,
-        code: ` /* Creating and drawing a 3D */ 
-import { createGrid3D, even, odd } from "pretty-grid";
+        code: ` /* Creating and drawing selective points on a grid*/ 
+import { createGrid, even, odd } from "pretty-grid";
 
 const grid = createGrid({   rows: 8, cols: 8, 
                             width: 400, height: 400 
@@ -72,6 +73,25 @@ grid.every(point => {
 grid.every(point => {
     orangeCircle(point.x, point.y);
 }, odd())
+`
+    },
+    {
+        title: "How to transform points on a Grid ",
+        setup: transform.setup,
+        draw: transform.draw,
+        code: ` /* Creating and Transforming a 2D grid */ 
+import { createGrid } from "pretty-grid";
+
+const grid = createGrid({   rows: 15, cols: 15, 
+                            width: 400, height: 400 
+                        }); 
+
+const transformSineWave = (point) => {
+    point.x += Math.sin(point.y * 0.015) * 20;
+    return point;
+}
+
+grid.transform(transformSineWave)
 `
     }
     ]
