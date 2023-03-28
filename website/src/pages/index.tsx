@@ -2,8 +2,10 @@ import React from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Alert, Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
-import { Link } from '@chakra-ui/react'
+import { Alert, border, Box, ChakraProvider, Container, Heading, Highlight, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Link as ChakraLink } from '@chakra-ui/react'
+import Link from '@docusaurus/Link'
+
 
 
 import styles from './index.module.css';
@@ -20,17 +22,24 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Box marginBottom={"16px"}>
-          <Heading as={"h1"}>{siteConfig.title}</Heading>
+        <Box marginBottom={"32px"}>
+          <Heading as={"h1"} size="2xl" marginBottom={2}>{siteConfig.title}</Heading>
           <Heading as={"h2"} size={"md"}>{siteConfig.tagline}</Heading>
         </Box>
-        <Box>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Documentation
-          </Link>
-        </Box>
+
+
+        <Link
+          className="button button--secondary button--lg"
+          to="/docs/intro">
+          Documentation
+        </Link>
+        <Link
+          className="button button--secondary button--lg"
+          style={{ backgroundColor: "transparent", marginLeft: "10px", outline: "1px solid white", color: "white" }}
+          to="#examples">
+          Examples
+        </Link>
+
       </div>
     </header>
   );
@@ -50,7 +59,7 @@ export default function Home(): JSX.Element {
         </Head>
         <HomepageHeader />
 
-        <Container padding={"32px 0"}>
+        <Container padding={"64px 0"}>
           <Heading>Why Pretty Grid ?</Heading>
           <Text>
             Creating 2D or 3D grids involves a lot of boiler plate code.
@@ -67,15 +76,15 @@ export default function Home(): JSX.Element {
           </SimpleGrid>
         </Box>
 
-        <Container padding={"32px 0"} id="examples">
+        <Container paddingTop={"128px"} id="examples">
           <Heading>Examples</Heading>
-          <Text>
-            Non equidem invideo, miror magis posuere velit aliquet. Qui ipsorum lingua Celtae, nostra Galli appellantur.
 
+          <Text>
+            The examples below illustrate some basic capabilities of <code>pretty-grid</code>. If you want to learn more, check out the documentation section.
             <br /><br />
             <Alert status='info'>
               <Box>
-                The examples below use the powerful <strong><Link display={"inline"} padding={0} margin={0} href='https://p5js.org/'>p5.js library</Link > </strong> to draw to the html canvas. For brevity, the examples include the <code>pretty-grid</code> code only .
+                These examples use the powerful <strong><ChakraLink display={"inline"} padding={0} margin={0} href='https://p5js.org/'>p5.js library</ChakraLink > </strong> to draw to the html canvas. For brevity, the examples include the <code>pretty-grid</code> code only .
               </Box>
             </Alert>
 
